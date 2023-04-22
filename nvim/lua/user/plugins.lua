@@ -273,10 +273,12 @@ use({
 })
 
 use({
-  'glepnir/dashboard-nvim',
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
   config = function()
     require('user.plugins.dashboard')
   end,
+  requires = {'nvim-tree/nvim-web-devicons'}
 })
 
 use({
@@ -343,7 +345,7 @@ use ({'ellisonleao/gruvbox.nvim',
     })
 
     vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' })
-    vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
+    -- vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
   end,
 })
 -- use({

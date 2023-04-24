@@ -9,5 +9,5 @@ vim.g.floaterm_wintitle = 0
 
 vim.cmd([[
   highlight link Floaterm CursorLine
-  highlight link FloatermBorder CursorLineBg
+  " highlight link FloatermBorder CursorLineBg
 ]])

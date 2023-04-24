@@ -174,6 +174,7 @@ use({
   end,
 })
 
+-- Cool git stuff
 use({
   'tpope/vim-fugitive',
   requires = 'tpope/vim-rhubarb',
@@ -194,16 +195,16 @@ use({
   end,
 })
 
--- use({
---   'neovim/nvim-lspconfig',
---   requires = {
---     'b0o/schemastore.nvim',
---     'folke/lsp-colors.nvim',
---   },
---   config = function()
---     require('user.plugins.lspconfig')
---   end,
--- })
+use({
+  'neovim/nvim-lspconfig',
+  requires = {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim'
+  },
+  config = function()
+    require('user/plugins/lspconfig')
+  end,
+})
 
 use({
   'weilbith/nvim-code-action-menu',
@@ -322,7 +323,7 @@ use({
 use('github/copilot.vim')
 
 -- Themes
-use('sainnhe/gruvbox-material')
+-- use('sainnhe/gruvbox-material')
 use ({'ellisonleao/gruvbox.nvim',
     config = function()
 

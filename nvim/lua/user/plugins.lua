@@ -15,11 +15,11 @@ local packer_bootstrap = ensure_packer()
 -- Initialize packer
 require('packer').init({
   compile_path = vim.fn.stdpath('data')..'/site/plugin/packer_compiled.lua',
-  -- display = {
-  --   open_fn = function()
-  --     return require('packer.util').float({ border = 'solid' })
-  --   end,
-  -- },
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'solid' })
+    end,
+  },
 })
 
 -- Install plugins
@@ -329,8 +329,8 @@ use ({'ellisonleao/gruvbox.nvim',
 
     -- Hide the characters in FloatBorder
     vim.api.nvim_set_hl(0, 'FloatBorder', {
-      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).foreground,
-      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).foreground,
+      fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+      bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
     })
 
     -- Make the StatusLineNonText background the same as StatusLine

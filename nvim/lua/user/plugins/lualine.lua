@@ -1,17 +1,11 @@
-local separator = { '"▏"', color = 'StatusLineNonText' }
+local separator = { '""', color = 'StatusLineNonText' }
 
 require('lualine').setup({
   options = {
     section_separators = '',
     component_separators = '',
     globalstatus = true,
-    -- theme = {
-    --   normal = {
-    --     a = 'StatusLine',
-    --     b = 'StatusLine',
-    --     c = 'StatusLine',
-    --   },
-    -- },
+    theme = 'gruvbox'
   },
   sections = {
     lualine_a = {
@@ -22,7 +16,7 @@ require('lualine').setup({
       'branch',
       'diff',
       separator,
-      '"🖧  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
+      '"󰌗  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
       { 'diagnostics', sources = { 'nvim_diagnostic' } },
       separator,
     },

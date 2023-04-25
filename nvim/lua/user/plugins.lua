@@ -218,6 +218,17 @@ use({
 --   end,
 -- })
 
+use {
+  'j-hui/fidget.nvim',
+  config = function()
+    require('fidget').setup{
+      align = {
+        bottom = false
+      }
+    }
+  end,
+}
+
 use({
   'L3MON4D3/LuaSnip',
   config = function()

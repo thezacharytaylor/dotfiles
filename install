@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
+echo "Setup complete"
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 rm -rf $HOME/.config/nvim
@@ -17,6 +17,9 @@ ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 rm -rf $HOME/.config/phpactor
 ln -s $DOTFILES/phpactor $HOME/.config/phpactor
+
+mkdir -p $HOME/.nvm
+ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

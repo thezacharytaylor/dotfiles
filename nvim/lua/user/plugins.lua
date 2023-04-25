@@ -211,23 +211,12 @@ use({
   cmd = 'CodeActionMenu',
 })
 
-use({
-  'jose-elias-alvarez/null-ls.nvim',
-  config = function()
-    require('user.plugins.null-ls')
-  end,
-})
-
--- use {
---   'j-hui/fidget.nvim',
+-- use({
+--   'jose-elias-alvarez/null-ls.nvim',
 --   config = function()
---     require('fidget').setup{
---       align = {
---         bottom = false
---       }
---     }
+--     require('user.plugins.null-ls')
 --   end,
--- }
+-- })
 
 use({
   'L3MON4D3/LuaSnip',

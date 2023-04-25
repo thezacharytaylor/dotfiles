@@ -55,7 +55,7 @@ local function get_typescript_server_path(root_dir)
   local project_root = util.find_node_modules_ancestor(root_dir)
 
   local local_tsserverlib = project_root ~= nil and util.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js')
-  local global_tsserverlib = '/home/jess/.local/lib/node_modules/typescript/lib/tsserverlibrary.js'
+  local global_tsserverlib = '/Users/zacharytaylor/.nvm/versions/node/v18.15.0/lib/node_modules/typescript/lib/tsserverlibrary.js'
 
   if local_tsserverlib and util.path.exists(local_tsserverlib) then
     return local_tsserverlib
@@ -131,7 +131,7 @@ require('lspconfig').lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   -- cmd = { '/opt/lua-language-server/bin/lua-language-server', '-E', '/opt/lua-language-server/bin/main.lua' },
-  cmd = { '/opt/lua-language-server/bin/lua-language-server' },
+  -- cmd = { '/opt/lua-language-server/bin/lua-language-server' },
   settings = {
     Lua = {
       runtime = {
@@ -157,20 +157,20 @@ require('lspconfig').tailwindcss.setup({
   capabilities = capabilities,
 })
 
-require('lspconfig').volar.setup({
-  on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
-  end,
-  on_new_config = function(new_config, new_root_dir)
-    new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
-  end,
-  capabilities = capabilities,
-  -- Enable "Take Over Mode" where volar will provide all TS LSP services
-  -- This drastically improves the responsiveness of diagnostic updates on change
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-})
+-- require('lspconfig').volar.setup({
+--   on_attach = function(client, bufnr)
+--     on_attach(client, bufnr)
+--     client.server_capabilities.documentFormattingProvider = false
+--     client.server_capabilities.documentRangeFormattingProvider = false
+--   end,
+--   on_new_config = function(new_config, new_root_dir)
+--     new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+--   end,
+--   capabilities = capabilities,
+--   -- Enable "Take Over Mode" where volar will provide all TS LSP services
+--   -- This drastically improves the responsiveness of diagnostic updates on change
+--   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+-- })
 
 vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })

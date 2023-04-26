@@ -11,7 +11,7 @@ vim.o.completeopt = 'menuone,longest,preview'
 
 cmp.setup({
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
   },
   formatting = {
     format = lspkind.cmp_format({
@@ -47,7 +47,7 @@ cmp.setup({
       -- behavior = cmp.ConfirmBehavior.Replace,
       -- select = false,
     end, { 'i', 's' }),
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ['<M-Tab>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
       elseif cmp.visible() then

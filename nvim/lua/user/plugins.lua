@@ -1,20 +1,20 @@
 -- Install packer
-local ensure_packer = function ()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
 local packer_bootstrap = ensure_packer()
 
 -- Initialize packer
 require('packer').init({
-  compile_path = vim.fn.stdpath('data')..'/site/plugin/packer_compiled.lua',
+  compile_path = vim.fn.stdpath('data') .. '/site/plugin/packer_compiled.lua',
   display = {
     open_fn = function()
       return require('packer.util').float({ border = 'solid' })
@@ -36,18 +36,23 @@ use({
     vim.cmd('Rooter')
   end,
 })
-use('christoomey/vim-tmux-navigator')
+
 use('farmergreg/vim-lastplace')
+
+if vim.g.vscode then
+else
+use('christoomey/vim-tmux-navigator')
 use('tpope/vim-commentary')
 use('tpope/vim-repeat')
 use('tpope/vim-surround')
-use('tpope/vim-eunuch') -- Adds :Rename, :SudoWrite
-use('tpope/vim-unimpaired') -- Adds [b and other handy mappings
-use('tpope/vim-sleuth') -- Indent autodetection with editorconfig support
+use('tpope/vim-eunuch')        -- Adds :Rename, :SudoWrite
+use('tpope/vim-unimpaired')    -- Adds [b and other handy mappings
+use('tpope/vim-sleuth')        -- Indent autodetection with editorconfig support
 use('jessarcher/vim-heritage') -- Automatically create parent dirs when saving
 use('nelstrom/vim-visual-star-search')
 
-use({ 'tpope/vim-projectionist',
+use({
+  'tpope/vim-projectionist',
   requires = 'tpope/vim-dispatch',
   config = function()
     require('user.plugins.projectionist')
@@ -68,7 +73,6 @@ use({
 
 use({
   'sickill/vim-pasta',
-
   config = function()
     require('user.plugins.pasta')
   end,
@@ -87,6 +91,7 @@ use({
     require('user.plugins.indent-blankline')
   end,
 })
+end
 
 use({
   'AndrewRadev/splitjoin.vim',
@@ -95,6 +100,8 @@ use({
   end,
 })
 
+if vim.g.vscode then
+else
 use({
   'windwp/nvim-autopairs',
   config = function()
@@ -126,6 +133,7 @@ use({
     require('user.plugins.nvim-tree')
   end,
 })
+end
 
 use({
   'karb94/neoscroll.nvim',
@@ -134,6 +142,8 @@ use({
   end,
 })
 
+if vim.g.vscode then
+else
 use({
   'vim-test/vim-test',
   config = function()
@@ -153,7 +163,7 @@ use({
   requires = {
     { 'nvim-lua/plenary.nvim' },
     { 'kyazdani42/nvim-web-devicons' },
-    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    { 'nvim-telescope/telescope-fzf-native.nvim',    run = 'make' },
     { 'nvim-telescope/telescope-live-grep-args.nvim' },
   },
   config = function()
@@ -205,7 +215,7 @@ use({
     'jay-babu/mason-null-ls.nvim',
   },
   config = function()
-    require('user/plugins/lspconfig')
+    require('user.plugins.lspconfig')
   end,
 })
 
@@ -213,6 +223,7 @@ use({
   'weilbith/nvim-code-action-menu',
   cmd = 'CodeActionMenu',
 })
+end
 
 -- use({
 --   'jose-elias-alvarez/null-ls.nvim',
@@ -224,7 +235,7 @@ use({
 use {
   'j-hui/fidget.nvim',
   config = function()
-    require('fidget').setup{
+    require('fidget').setup {
       align = {
         bottom = false
       }
@@ -239,24 +250,30 @@ use({
   end,
 })
 
+if vim.g.vscode then
+else
 use({
   'hrsh7th/nvim-cmp',
   requires = {
-    'L3MON4D3/LuaSnip',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-cmdline',
+    -- 'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-nvim-lsp-signature-help',
-    'hrsh7th/cmp-nvim-lua',
-    'jessarcher/cmp-path',
-    'onsails/lspkind-nvim',
+    'hrsh7th/cmp-buffer',
+    -- 'hrsh7th/cmp-nvim-lua',
+    -- 'jessarcher/cmp-path',
+    'hrsh7th/cmp-path',
+    'L3MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
+    'onsails/lspkind-nvim',
   },
   config = function()
-    require('user.plugins.cmp')
+    require('user/plugins/cmp')
   end,
 })
+end
 
+if vim.g.vscode then
+else
 use({
   'phpactor/phpactor',
   branch = 'master',
@@ -266,9 +283,11 @@ use({
     require('user.plugins.phpactor')
   end,
 })
+end
 
 -- Experimental
-
+if vim.g.vscode then
+else
 use({
   'luukvbaal/stabilize.nvim',
   config = function()
@@ -282,7 +301,7 @@ use({
   config = function()
     require('user.plugins.dashboard')
   end,
-  requires = {'nvim-tree/nvim-web-devicons'}
+  requires = { 'nvim-tree/nvim-web-devicons' }
 })
 
 use({
@@ -321,15 +340,16 @@ use({
     vim.g.cursorhold_updatetime = 100
   end,
 })
+end
 
 -- Copilot
 use('github/copilot.vim')
 
 -- Themes
 -- use('sainnhe/gruvbox-material')
-use ({'ellisonleao/gruvbox.nvim',
-    config = function()
-
+use({
+  'ellisonleao/gruvbox.nvim',
+  config = function()
     -- Hide the characters in FloatBorder
     vim.api.nvim_set_hl(0, 'FloatBorder', {
       fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
@@ -348,8 +368,11 @@ use ({'ellisonleao/gruvbox.nvim',
       bg = vim.api.nvim_get_hl_by_name('CursorLine', true).foreground,
     })
 
+   if vim.g.vscode then
+   else
     vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' })
     -- vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
+   end
   end,
 })
 -- use({

@@ -215,7 +215,7 @@ use({
     'jay-babu/mason-null-ls.nvim',
   },
   config = function()
-    require('user.plugins.lspconfig')
+    require('user/plugins/lspconfig2')
   end,
 })
 
@@ -270,10 +270,7 @@ use({
     require('user/plugins/cmp')
   end,
 })
-end
 
-if vim.g.vscode then
-else
 use({
   'phpactor/phpactor',
   branch = 'master',

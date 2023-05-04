@@ -7,6 +7,18 @@ return {
     end,
   },
   {
+    "sainnhe/gruvbox-material",
+  },
+  {
+    "sainnhe/everforest",
+  },
+  {
+    "sainnhe/edge",
+  },
+  {
+    "sainnhe/sonokai",
+  },
+  {
     "rebelot/kanagawa.nvim",
     opts = {
       theme = "dragon",
@@ -19,7 +31,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-flat",
+      colorscheme = "gruvbox-material",
+      -- colorscheme = "gruvbox-flat",
       -- colorscheme = "kanagawa",
     },
   },

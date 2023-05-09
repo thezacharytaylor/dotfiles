@@ -73,7 +73,8 @@ alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias sshconfig="vim ~/.ssh/config"
-alias openkinp="cd"" Documents/Kinetic"
+alias cdk="cd"" ~/Kinetic"
+alias cdr="cd"" ~/Repos"
 alias hostsconfig="sudo nvim /private/etc/hosts"
 alias cduo="composer dump-autoload -o"
 alias npmrw="npm run watch"
@@ -84,6 +85,8 @@ alias bigbois="find / -type f -size +1G -ls"
 alias s="kitty +kitten ssh"
 alias wpsr="wp search-replace"
 alias dotconfig="vim ~/Repos/dotfiles"
+alias vs="code"
+alias vsc="code ."
 
 #--------------------------------------------------------------------------
 # Miscellaneous

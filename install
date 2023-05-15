@@ -18,8 +18,9 @@ ln -s $DOTFILES/kitty $HOME/.config/kitty
 
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
-unlink $HOME/.gitconfig
+# unlink $HOME/.gitconfig
 ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
+ln -sf $DOTFILES/scripts/up.sh $HOME/bin/up.sh
 
 rm -rf $HOME/.config/phpactor
 ln -s $DOTFILES/phpactor $HOME/.config/phpactor
@@ -30,5 +31,6 @@ ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
 
 echo "Setup finished."

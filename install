@@ -1,14 +1,20 @@
 #!/usr/bin/env sh
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-echo "Setup complete"
+echo "Setup starting..."
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
 
+rm -rf $HOME/.config/svim
+ln -s $DOTFILES/svim $HOME/.config/svim
+
 rm -rf $HOME/.config/kitty
 ln -s $DOTFILES/kitty $HOME/.config/kitty
+
+# rm -rf $HOME/.config/wezterm
+# ln -s $DOTFILES/wezterm.lua $HOME/.wezterm.lua
 
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
@@ -24,3 +30,5 @@ ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+echo "Setup finished."

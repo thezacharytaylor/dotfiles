@@ -73,9 +73,18 @@ alias vim="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias sshconfig="vim ~/.ssh/config"
+alias hostsconfig="sudo nvim /private/etc/hosts"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+alias ls="exa -lag --header"
+alias exa="/opt/homebrew/bin/exa"
 alias cdk="cd"" ~/Kinetic"
 alias cdr="cd"" ~/Repos"
-alias hostsconfig="sudo nvim /private/etc/hosts"
+alias home="cd ~"
+alias ..="cd .."
+alias lg="lazygit"
 alias cduo="composer dump-autoload -o"
 alias npmrw="npm run watch"
 alias npmrd="npm run dev"
@@ -98,3 +107,4 @@ alias vsc="code ."
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionexport PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
 export GPG_TTY=$(tty)
+eval "$(starship init zsh)"

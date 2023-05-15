@@ -18,7 +18,7 @@ ln -s $DOTFILES/kitty $HOME/.config/kitty
 
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
-ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
+unlink $HOME/.gitconfig
 ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 rm -rf $HOME/.config/phpactor

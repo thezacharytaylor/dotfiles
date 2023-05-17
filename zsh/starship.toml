@@ -1,0 +1,25 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+[󰆧](bold blue) [$directory]($style)\
+$git_branch$git_state$git_status\
+$nodejs\
+$php\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$status\
+$jobs\
+$battery\
+$character"""
+
+# [git_branch]
+# format = '[\($branch\)]($style)'
+
+# [git_status]
+# format = '[$untracked$modified$staged$deleted$renamed]($style) '

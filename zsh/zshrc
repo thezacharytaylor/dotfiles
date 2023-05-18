@@ -110,6 +110,7 @@ alias vsc="code ."
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionexport PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
 
 up() { . up.sh "$1"; }
+rep() { . rep.sh "$1"; }
 
 export GPG_TTY=$(tty)
 eval "$(starship init zsh)"

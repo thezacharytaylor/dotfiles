@@ -31,6 +31,7 @@ export ARTISAN_OPEN_ON_MAKE_EDITOR=nvr
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+export PATH="/Users/zacharytaylor/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -44,6 +45,7 @@ export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
 export PATH=$PATH:$NVM_DIR/versions/node/node_modules/.bin
 
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+export PATH="~/.local/bin/lvim:$PATH"
 
 # echo 'export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"' >> ~/.zshrc
 # echo 'export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"' >> ~/.zshrc
@@ -70,6 +72,7 @@ export XDEBUG_CONFIG="idekey=VSCODE"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nvim="lvim"
 alias vim="nvim"
 alias v="nvim"
 alias zcfg="vim ~/.zshrc"

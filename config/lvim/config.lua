@@ -32,6 +32,7 @@ lvim.plugins = {{
 
 -- Settings
 lvim.colorscheme = "everforest"
+vim.opt.relativenumber = true
 -- lvim.builtin.lualine.options.theme = "everforest"
 
 -- Plugins

@@ -26,14 +26,16 @@ fi
 
 # Change to the working directory and do work
 cd $WORKDIR
-echo "✅ Open VS Code"
-code .
+# echo "✅ Open editor"
+# code .
+# lvim
 
 # If .valetrc, then switch PHP version
 # To use, add a .valetrc file to the folder root with the following: php=php@8.1
 if [[ -f "$WORKDIR/.valetrc" ]]; then
 	echo "✅ Switching PHP version"
 	valet use
+  composer global update
 fi
 
 # If .git, then do git stuff
@@ -41,8 +43,8 @@ if [[ -d "$WORKDIR/.git" ]]; then
 	echo "✅ Fetching repo"
 	git pull
 
-	echo "✅ Open Lazygit"
-	lg
+	# echo "✅ Open Lazygit"
+	# lg
 fi
 
 # If trellis, then init it.
@@ -50,6 +52,10 @@ if [[ -d "$WORKDIR/trellis" ]]; then
 	echo "✅ Trellis"
 	trellis init
 fi
+
+echo "✅ Open editor"
+# code .
+lvim
 
 echo "👯‍♀️"
 return

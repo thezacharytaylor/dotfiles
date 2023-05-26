@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
+# TODO:
+# Add sketchybar setup
+# chmod for scripts, including sketchy plugins
+# brew
+# composer
+# nvm
+# valet
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Setup starting..."

@@ -115,6 +115,14 @@ alias vsc="code ."
 up() { . up.sh "$1"; }
 rep() { . rep.sh "$1"; }
 
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
+
 export GPG_TTY=$(tty)
 eval "$(starship init zsh)"
 export PYENV_ROOT="$HOME/.pyenv"

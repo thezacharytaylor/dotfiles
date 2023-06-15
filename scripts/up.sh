@@ -57,5 +57,5 @@ echo "✅ Open editor"
 # code .
 lvim
 
-echo "👯‍♀️"
+echo "👯‍"
 return

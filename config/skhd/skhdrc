@@ -82,6 +82,12 @@ shift + lalt - n : yabai -m window --space next && yabai -m space --focus next &
 shift + lalt - x : yabai -m space --mirror x-axis
 shift + lalt - y : yabai -m space --mirror y-axis
 
+# Create space on the active display
+cmd + ctrl - n : yabai -m space --create
+
+# Delete focused space and focus first space on display
+# cmd + lalt - c : yabai -m space --destroy
+
 ## Stacks (shift + ctrl - ...)
 # Add the active window to the window or stack to the {direction}: shift + ctrl - {j, k, l, ö}
 shift + ctrl - h    : yabai -m window  west --stack $(yabai -m query --windows --window | jq -r '.id') && sketchybar --trigger window_focus
@@ -122,13 +128,13 @@ shift + ctrl + lalt - l : yabai -m window --insert east
 shift + ctrl + lalt - s : yabai -m window --insert stack
 
 # make floating window fill screen
-shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+ctrl + alt - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+ctrl + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 ## Misc
 # Open new Kitty window

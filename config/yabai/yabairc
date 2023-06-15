@@ -34,8 +34,8 @@ yabai -m config external_bar               all:35:0     \
                 window_border_blur         off          \
                 window_animation_duration  0.3          \
                 active_window_border_color 0xffe1e3e4   \
-                normal_window_border_color 0xff494d64   \
-                insert_feedback_color      0xff9dd274   \
+                normal_window_border_color 0xff4f5b58   \
+                insert_feedback_color      0xffa7c080   \
                 split_ratio                0.50         \
                 auto_balance               off          \
                 mouse_modifier             fn           \
@@ -55,6 +55,8 @@ yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+yabai -m rule --add label="Arc" app="^Arc$" title="^(Developer Tools|Space 1)$" manage=off
+# yabai -m rule --add app="Arc.LittleBrowserWindow" manage=off
 
 yabai -m config layout bsp
 # Override default layout for space 2 only

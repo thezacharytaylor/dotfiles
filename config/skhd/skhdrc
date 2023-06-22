@@ -136,6 +136,9 @@ ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1
 # make floating window fill right-half of screen
 ctrl + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
+# make floating window fill lower right-half of screen
+ctrl + alt - down  : yabai -m window --grid 2:2:1:0:1:1
+
 ## Misc
 # Open new Kitty window
 lalt - t : kitty msg create-window

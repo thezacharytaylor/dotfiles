@@ -30,6 +30,15 @@ cd $WORKDIR
 # code .
 # lvim
 
+# If .git, then do git stuff
+if [[ -d "$WORKDIR/.git" ]]; then
+	echo "✅ Fetching repo"
+	git pull
+
+	# echo "✅ Open Lazygit"
+	# lg
+fi
+
 # If .valetrc, then switch PHP version
 # To use, add a .valetrc file to the folder root with the following: php=php@8.1
 if [[ -f "$WORKDIR/.valetrc" ]]; then
@@ -38,13 +47,10 @@ if [[ -f "$WORKDIR/.valetrc" ]]; then
   composer global update
 fi
 
-# If .git, then do git stuff
-if [[ -d "$WORKDIR/.git" ]]; then
-	echo "✅ Fetching repo"
-	git pull
-
-	# echo "✅ Open Lazygit"
-	# lg
+# If composer.json, then install
+if [[ -f "$WORKDIR/composer.json" ]]; then
+  echo "✅ Composer install"
+  composer install
 fi
 
 # If trellis, then init it.

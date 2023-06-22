@@ -47,9 +47,10 @@ if [[ -f "$WORKDIR/.valetrc" ]]; then
   composer global update
 fi
 
-# If composer.json, then install
-if [[ -f "$WORKDIR/composer.json" ]]; then
-  echo "✅ Composer install"
+# If composer.json, then install packages
+if [[ -f "$WORKDIR/composer.json" ]]
+then
+  echo "✅ Installing dependencies"
   composer install
 fi
 

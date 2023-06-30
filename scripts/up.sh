@@ -28,7 +28,6 @@ fi
 cd $WORKDIR
 # echo "✅ Open editor"
 # code .
-# lvim
 
 # If .git, then do git stuff
 if [[ -d "$WORKDIR/.git" ]]; then

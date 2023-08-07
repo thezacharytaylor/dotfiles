@@ -57,7 +57,7 @@ export PATH="~/.local/bin/lvim:$PATH"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='lvim'
 fi
 
 # Compilation flags
@@ -78,7 +78,7 @@ alias v="nvim"
 alias zcfg="vim ~/.zshrc"
 alias zrld="source ~/.zshrc"
 alias scfg="vim ~/.ssh/config"
-alias hcfg="sudo nvim /private/etc/hosts"
+alias hcfg="sudo vim /private/etc/hosts"
 alias dcfg="vim ~/Repos/dotfiles"
 alias rm='rm -i'
 alias cp='cp -i'

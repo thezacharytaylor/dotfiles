@@ -5,4 +5,5 @@ end
 
 if not vim.g.vscode then
   vim.opt.relativenumber = true
+  vim.opt.wrap = true
 end

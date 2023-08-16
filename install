@@ -18,7 +18,7 @@ rm -rf $HOME/.config/svim
 ln -s $DOTFILES/svim $HOME/.config/svim
 
 rm -rf $HOME/.config/kitty
-ln -s $DOTFILES/kitty $HOME/.config/kitty
+ln -s $DOTFILES/config/kitty $HOME/.config/kitty
 
 # rm -rf $HOME/.config/wezterm
 # ln -s $DOTFILES/wezterm.lua $HOME/.wezterm.lua

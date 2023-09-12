@@ -2,6 +2,7 @@
 
 # ~/.macos — https://mths.be/macos
 # Modified by Kent C. Dodds
+# Further Modified by Zachary Taylor (currently WIP)
 # Run without downloading:
 # curl https://raw.githubusercontent.com/kentcdodds/dotfiles/HEAD/.macos | bash
 

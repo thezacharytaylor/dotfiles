@@ -67,6 +67,9 @@ export XDEBUG_CONFIG="idekey=VSCODE"
 #--------------------------------------------------------------------------
 # Aliases
 #--------------------------------------------------------------------------
+command_exists () {
+  hash "$1" 2> /dev/null
+}
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
@@ -84,7 +87,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-alias ls="exa -lag --header"
+# alias ls="exa -lag --header"
 alias exa="/opt/homebrew/bin/exa"
 alias cdk="cd"" ~/Kinetic"
 alias cdr="cd"" ~/Repos"
@@ -104,6 +107,68 @@ alias vsec="valet secure"
 alias wpsr="wp search-replace"
 alias vs="code"
 alias vsc="code ."
+
+# File listing options
+alias lr='ls -R' # List files in sub-directories, recursivley
+alias lf='ls -A | grep' # Use grep to find files
+alias lc='find . -type f | wc -l' # Shows number of files
+alias ld='ls -l | grep "^d"' # List directories only
+
+# If exa installed, then use exa for some ls commands
+if command_exists exa ; then
+  alias l='exa -aF --icons' # Quick ls
+  alias la='exa -aF --icons' # List all
+  alias ll='exa -laF --icons' # Show details
+  alias lm='exa -lahr --color-scale --icons -s=modified' # Recent
+  alias lb='exa -lahr --color-scale --icons -s=size' # Largest / size
+  alias tree='f() { exa -aF --tree -L=${1:-2} --icons };f'
+else
+  alias la='ls -A' # List all files/ includes hidden
+  alias ll='ls -lAFh' # List all files, with full details
+  alias lb='ls -lhSA' # List all files sorted by biggest
+  alias lm='ls -tA -1' # List files sorted by last modified
+fi
+
+# Use color diff, if availible
+if command_exists colordiff ; then
+  alias diff='colordiff'
+fi
+
+# Find + manage aliases
+alias al='alias | less' # List all aliases
+alias as='alias | grep' # Search aliases
+alias ar='unalias' # Remove given alias
+
+# System Monitoring
+# alias meminfo='free -m -l -t' # Show free and used memory
+# alias memhog='ps -eo pid,ppid,cmd,%mem --sort=-%mem | head' # Processes consuming most mem
+# alias cpuhog='ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head' # Processes consuming most cpu
+# alias cpuinfo='lscpu' # Show CPU Info
+# alias distro='cat /etc/*-release' # Show OS info
+# alias ports='netstat -tulanp' # Show open ports
+
+# Copy / pasting
+alias cpwd='pwd | pbcopy' # Copy current path
+alias pa='pbpaste' # Paste clipboard contents
+
+# External Services
+alias myip='curl icanhazip.com'
+alias weather='curl wttr.in'
+alias weather-short='curl "wttr.in?format=3"'
+alias cheat='curl cheat.sh/'
+alias tinyurl='curl -s "http://tinyurl.com/api-create.php?url='
+alias joke='curl https://icanhazdadjoke.com'
+alias hackernews='curl hkkr.in'
+alias worldinternet='curl https://status.plaintext.sh/t'
+
+# Random lolz
+alias cls='clear;ls' # Clear and ls
+alias plz="fc -l -1 | cut -d' ' -f2- | xargs sudo" # Re-run last cmd as root
+alias yolo='git add .; git commit -m "YOLO"; git push origin master'
+alias when='date' # Show date
+alias whereami='pwd'
+alias dog='cat'
+alias gtfo='exit'
 
 #--------------------------------------------------------------------------
 # Miscellaneous
@@ -130,3 +195,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
+eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"

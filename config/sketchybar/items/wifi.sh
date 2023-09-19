@@ -6,6 +6,7 @@ wifi=(
   padding_right=7
   label.width=0
   icon="$WIFI_DISCONNECTED"
+  icon.color=$PINK
   script="$PLUGIN_DIR/wifi.sh"
 )
 

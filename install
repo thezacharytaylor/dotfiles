@@ -10,6 +10,8 @@
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Setup starting..."
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+ln -sf $HOME/Repos/dotfiles/zsh/.zshenv $HOME/.zshenv
+ln -s $HOME/Repos/dotfiles/zsh $HOME/.config/zsh
 
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim

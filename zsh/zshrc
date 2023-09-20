@@ -70,14 +70,13 @@ export XDEBUG_CONFIG="idekey=VSCODE"
 command_exists () {
   hash "$1" 2> /dev/null
 }
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias_not_used () {
+  ! alias "$1" >/dev/null && ! hash "$1" 2> /dev/null
+}
+
 alias nvim="lvim"
 alias vim="nvim"
-alias v="nvim"
 alias zcfg="vim ~/.zshrc"
 alias zrld="source ~/.zshrc"
 alias scfg="vim ~/.ssh/config"
@@ -93,7 +92,6 @@ alias cdk="cd"" ~/Kinetic"
 alias cdr="cd"" ~/Repos"
 alias cdrd="cd"" ~/Repos/dotfiles"
 alias home="cd ~"
-alias ..="cd .."
 alias lg="lazygit"
 alias cduo="composer dump-autoload -o"
 alias npmrw="npm run watch"
@@ -102,11 +100,109 @@ alias npmrp="npm run production"
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias bigbois="find / -type f -size +1G -ls"
 alias s="kitty +kitten ssh"
-alias c="clear"
 alias vsec="valet secure"
 alias wpsr="wp search-replace"
 alias vs="code"
 alias vsc="code ."
+
+# Single-letter aliases, for frequently used basics, only if not already set
+if alias_not_used a; then; alias a='alias'; fi
+if alias_not_used c; then; alias c='clear'; fi
+if alias_not_used d; then; alias c='date'; fi
+if alias_not_used e; then; alias e='exit'; fi
+if alias_not_used f; then; alias f='find'; fi
+if alias_not_used g; then; alias g='grep'; fi
+if alias_not_used h; then; alias h='history'; fi
+if alias_not_used i; then; alias i='id'; fi
+if alias_not_used j; then; alias j='jobs'; fi
+if alias_not_used l; then; alias l='ls'; fi
+if alias_not_used m; then; alias m='man'; fi
+if alias_not_used p; then; alias p='pwd'; fi
+if alias_not_used s; then; alias s='sudo'; fi
+if alias_not_used t; then; alias t='touch'; fi
+if alias_not_used v; then; alias v='nvim'; fi
+
+# List contents of packed file, depending on type
+ls-archive () {
+  if [ -z "$1" ]; then
+    echo "No archive specified"
+    return;
+  fi
+  if [[ ! -f $1 ]]; then
+    echo "File not found"
+    return;
+  fi
+  ext="${1##*.}"
+  if [ $ext = 'zip' ]; then
+    unzip -l $1
+  elif [ $ext = 'rar' ]; then
+    unrar l $1
+  elif [ $ext = 'tar' ]; then
+    tar tf $1
+  elif [ $ext = 'tar.gz' ]; then
+    echo $1
+  elif [ $ext = 'ace' ]; then
+    unace l $1
+  else
+    echo "Unknown Archive Format"
+  fi
+}
+
+alias lz='ls-archive'
+
+# Make directory, and cd into it
+mkcd() {
+  local dir="$*";
+  mkdir -p "$dir" && cd "$dir";
+}
+
+# Make dir and copy
+mkcp() {
+  local dir="$2"
+  local tmp="$2"; tmp="${tmp: -1}"
+  [ "$tmp" != "/" ] && dir="$(dirname "$2")"
+  [ -d "$dir" ] ||
+    mkdir -p "$dir" &&
+    cp -r "$@"
+}
+
+# Move dir and move into it
+mkmv() {
+  local dir="$2"
+  local tmp="$2"; tmp="${tmp: -1}"
+  [ "$tmp" != "/" ] && dir="$(dirname "$2")"
+  [ -d "$dir" ] ||
+      mkdir -p "$dir" &&
+      mv "$@"
+}
+
+# Getting outa directories
+alias c~='cd ~'
+alias c.='cd ..'
+alias c..='cd ../../'
+alias c...='cd ../../../'
+alias c....='cd ../../../../'
+alias c.....='cd ../../../../'
+alias cg='cd `git rev-parse --show-toplevel`' # Base of git project
+
+# Finding files and directories
+alias dud='du -d 1 -h' # List sizes of files within directory
+alias duf='du -sh *' # List total size of current directory
+alias ff='find . -type f -name' # Find a file by name within current directory
+(( $+commands[fd] )) || alias fd='find . -type d -name' # Find direcroy by name
+
+# Command line history
+alias h='history' # Shows full history
+alias h-search='fc -El 0 | grep' # Searchses for a word in terminal history
+alias top-history='history 0 | awk '{print $2}' | sort | uniq -c | sort -n -r | head' 
+alias histrg='history -500 | rg' # Rip grep search recent history
+
+# Clearing terminal
+if command_exists hr ; then
+  alias c='clear && hr_color='\033[0;37m' && hr'
+else
+  alias c='clear'
+fi
 
 # File listing options
 alias lr='ls -R' # List files in sub-directories, recursivley

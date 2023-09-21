@@ -26,8 +26,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-# alias ls="exa -lag --header"
-alias exa="/opt/homebrew/bin/exa"
+# alias ls="eza -lag --header"
+alias eza="/opt/homebrew/bin/eza"
 
 # Misc
 alias lg="lazygit"
@@ -146,14 +146,14 @@ alias lf='ls -A | grep' # Use grep to find files
 alias lc='find . -type f | wc -l' # Shows number of files
 alias ld='ls -l | grep "^d"' # List directories only
 
-# If exa installed, then use exa for some ls commands
-if command_exists exa ; then
-  alias l='exa -aF --icons' # Quick ls
-  alias la='exa -aF --icons' # List all
-  alias ll='exa -laF --icons' # Show details
-  alias lm='exa -lahr --color-scale --icons -s=modified' # Recent
-  alias lb='exa -lahr --color-scale --icons -s=size' # Largest / size
-  alias tree='f() { exa -aF --tree -L=${1:-2} --icons };f'
+# If eza installed, then use eza for some ls commands
+if command_exists eza ; then
+  alias l='eza -aF --icons' # Quick ls
+  alias la='eza -aF --icons' # List all
+  alias ll='eza -laF --icons' # Show details
+  alias lm='eza -lahr --color-scale --icons -s=modified' # Recent
+  alias lb='eza -lahr --color-scale --icons -s=size' # Largest / size
+  alias tree='f() { eza -aF --tree -L=${1:-2} --icons };f'
 else
   alias la='ls -A' # List all files/ includes hidden
   alias ll='ls -lAFh' # List all files, with full details

@@ -29,17 +29,31 @@
 
 # Catuppuccin
 # ===============================
-export BLACK=0xff1e1e2e
-export WHITE=0xffcdd6f4
-export PINK=0xfff5c2e7
-export RED=0xfff38ba8
-export GREEN=0xffa6e3a1
-export BLUE=0xff89b4fa
-export YELLOW=0xfff9e2af
-export ORANGE=0xfff5a97f
-export MAGENTA=0xfffab387
-export LAVENDER=0xffb4befe
-export GREY=0xff939ab7
+# export BLACK=0xff1e1e2e
+# export WHITE=0xffcdd6f4
+# export PINK=0xfff5c2e7
+# export RED=0xfff38ba8
+# export GREEN=0xffa6e3a1
+# export BLUE=0xff89b4fa
+# export YELLOW=0xfff9e2af
+# export ORANGE=0xfff5a97f
+# export MAGENTA=0xfffab387
+# export LAVENDER=0xffb4befe
+# export GREY=0xff939ab7
+
+# Catuppuccin Frappe
+# ===============================
+export BLACK=0xff303446
+export WHITE=0xffc6d0f5
+export PINK=0xfff4b8e4
+export RED=0xffe78284
+export GREEN=0xffa6d189
+export BLUE=0xff8caaee
+export YELLOW=0xffe5c890
+export ORANGE=0xffef9f76
+export MAGENTA=0xffca9ee6
+export LAVENDER=0xffbabbf1
+export GREY=0xff949cbb
 
 # General Palette Colors
 # ===============================
@@ -64,11 +78,19 @@ export TRANSPARENT=0x00000000
 
 # Catuppuccin
 # ===============================
-export BAR_COLOR=0xff1e1e2e
-export BAR_BORDER_COLOR=0xffcba6f7 #0xa024273a
-export BACKGROUND_1=0x603c3e4f
-export BACKGROUND_2=0x60494d64
-export POPUP_BACKGROUND_COLOR=0xff1e1e2e
+# export BAR_COLOR=0xff1e1e2e
+# export BAR_BORDER_COLOR=0xffcba6f7 #0xa024273a
+# export BACKGROUND_1=0x603c3e4f
+# export BACKGROUND_2=0x60494d64
+# export POPUP_BACKGROUND_COLOR=0xff1e1e2e
+
+# Catuppuccin
+# ===============================
+export BAR_COLOR=$BLACK
+export BAR_BORDER_COLOR=$MAGENTA
+export BACKGROUND_1=0xff414559
+export BACKGROUND_2=0xff51576d
+export POPUP_BACKGROUND_COLOR=$BLACK
 
 # General Bar Colors
 # ===============================

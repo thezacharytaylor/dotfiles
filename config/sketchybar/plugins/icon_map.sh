@@ -8,9 +8,6 @@ case "$1" in
 "Signal")
   icon_result=":signal:"
   ;;
-"Affinity Photo")
-  icon_result=":affinity_photo:"
-  ;;
 "Sublime Text")
   icon_result=":sublime_text:"
   ;;
@@ -56,9 +53,6 @@ case "$1" in
 "Microsoft Excel")
   icon_result=":microsoft_excel:"
   ;;
-"League of Legends")
-  icon_result=":league_of_legends:"
-  ;;
 "Obsidian")
   icon_result=":obsidian:"
   ;;
@@ -83,14 +77,8 @@ case "$1" in
 "Arc")
   icon_result=":arc:"
   ;;
-"TeamSpeak 3")
-  icon_result=":team_speak:"
-  ;;
 "Drafts")
   icon_result=":drafts:"
-  ;;
-"Jellyfin Media Player")
-  icon_result=":jellyfin:"
   ;;
 "Element")
   icon_result=":element:"
@@ -137,9 +125,6 @@ case "$1" in
 "Logseq")
   icon_result=":logseq:"
   ;;
-"Parallels Desktop")
-  icon_result=":parallels:"
-  ;;
 "App Store")
   icon_result=":app_store:"
   ;;
@@ -161,9 +146,6 @@ case "$1" in
 "Brave Browser")
   icon_result=":brave_browser:"
   ;;
-"?????")
-  icon_result=":netease_music:"
-  ;;
 "Messages" | "??" | "Nachrichten")
   icon_result=":messages:"
   ;;
@@ -173,7 +155,7 @@ case "$1" in
 "Bear")
   icon_result=":bear:"
   ;;
-"Notes" | "???")
+"Notes" | "Standard Notes" | "???")
   icon_result=":notes:"
   ;;
 "GrandTotal" | "Receipts")
@@ -197,7 +179,7 @@ case "$1" in
 "Orion" | "Orion RC")
   icon_result=":orion:"
   ;;
-"System Preferences" | "????")
+"System Preferences" | "System Settings" | "Activity Monitor" | "????")
   icon_result=":gear:"
   ;;
 "Reminders" | "????")
@@ -205,12 +187,6 @@ case "$1" in
   ;;
 "MoneyMoney")
   icon_result=":bank:"
-  ;;
-"MAMP" | "MAMP PRO")
-  icon_result=":mamp:"
-  ;;
-"Final Cut Pro")
-  icon_result=":final_cut_pro:"
   ;;
 "Microsoft PowerPoint")
   icon_result=":microsoft_power_point:"
@@ -281,7 +257,7 @@ case "$1" in
 "Zotero")
   icon_result=":zotero:"
   ;;
-"1Password 7")
+"1Password")
   icon_result=":one_password:"
   ;;
 "Slack")
@@ -406,6 +382,9 @@ case "$1" in
   ;;
 "Calibre")
   icon_result=":book:"
+  ;;
+"Toggl Track")
+  icon_result=":clock:"
   ;;
 *)
   icon_result=":default:"

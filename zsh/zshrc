@@ -10,9 +10,6 @@
 # Licensed under MIT (C) Zachary Taylor 2023                         #
 ######################################################################
 
-# Directory for all-things ZSH config
-zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -24,6 +21,9 @@ zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
 [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
                                                   || source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Directory for all-things ZSH config
+zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
 # Source all ZSH config files (if present)
 if [[ -d $zsh_dir ]]; then
@@ -43,7 +43,7 @@ if [[ -d $zsh_dir ]]; then
   # source ${zsh_dir}/lib/cursor.zsh
   source ${zsh_dir}/lib/history.zsh
   source ${zsh_dir}/lib/surround.zsh
-  source ${zsh_dir}/lib/completion.zsh
+  # source ${zsh_dir}/lib/completion.zsh
   # source ${zsh_dir}/lib/expansions.zsh
 fi
 

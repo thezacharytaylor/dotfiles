@@ -31,7 +31,7 @@ tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows >
 # startup_session ~/Kinetic/
 
 # BEGIN_KITTY_THEME
-# Rosé Pine
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
 

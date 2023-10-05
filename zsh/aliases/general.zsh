@@ -10,8 +10,8 @@ alias_not_used () {
 # Editors
 alias nvim="lvim"
 alias vim="nvim"
-alias vs="code"
-alias vsc="code ."
+alias vs="codium"
+alias vsc="codium ."
 
 # Configs
 alias zcfg="vim ~/.zshrc"
@@ -39,8 +39,8 @@ alias wpsr="wp search-replace"
 
 # Single-letter aliases, for frequently used basics, only if not already set
 if alias_not_used a; then; alias a='alias'; fi
-if alias_not_used c; then; alias c='clear'; fi
-if alias_not_used d; then; alias c='date'; fi
+if alias_not_used c; then; alias cl='clear'; fi
+if alias_not_used d; then; alias d='date'; fi
 if alias_not_used e; then; alias e='exit'; fi
 if alias_not_used f; then; alias f='find'; fi
 if alias_not_used g; then; alias g='grep'; fi

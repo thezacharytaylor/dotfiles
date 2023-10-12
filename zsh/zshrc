@@ -25,6 +25,19 @@
 # Directory for all-things ZSH config
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
+# Path to your oh-my-zsh installation.
+
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+# fox, tonotdo, agnoster
+COMPLETION_WAITING_DOTS="true"
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+plugins=(git composer sublime macos wp-cli vi-mode yarn vscode)
+
+source $ZSH/oh-my-zsh.sh
+
 # Source all ZSH config files (if present)
 if [[ -d $zsh_dir ]]; then
   # Import alias files
@@ -46,19 +59,6 @@ if [[ -d $zsh_dir ]]; then
   # source ${zsh_dir}/lib/completion.zsh
   # source ${zsh_dir}/lib/expansions.zsh
 fi
-
-# Path to your oh-my-zsh installation.
-
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-# fox, tonotdo, agnoster
-COMPLETION_WAITING_DOTS="true"
-
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git composer sublime macos wp-cli vi-mode yarn vscode)
-
-source $ZSH/oh-my-zsh.sh
 
 #--------------------------------------------------------------------------
 # Configuration

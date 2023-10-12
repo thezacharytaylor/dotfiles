@@ -26,7 +26,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-# alias ls="eza -lag --header"
+alias ls="eza -lag --header"
 alias eza="/opt/homebrew/bin/eza"
 
 # Misc
@@ -36,6 +36,7 @@ alias bigbois="find / -type f -size +1G -ls"
 alias s="kitty +kitten ssh"
 alias vsec="valet secure"
 alias wpsr="wp search-replace"
+alias hbu="brew update && brew upgrade && brew cleanup && brew doctor"
 
 # Single-letter aliases, for frequently used basics, only if not already set
 if alias_not_used a; then; alias a='alias'; fi
@@ -47,7 +48,7 @@ if alias_not_used g; then; alias g='grep'; fi
 if alias_not_used h; then; alias h='history'; fi
 if alias_not_used i; then; alias i='id'; fi
 if alias_not_used j; then; alias j='jobs'; fi
-if alias_not_used l; then; alias l='ls'; fi
+# if alias_not_used l; then; alias l='ls'; fi
 if alias_not_used m; then; alias m='man'; fi
 if alias_not_used p; then; alias p='pwd'; fi
 if alias_not_used s; then; alias s='sudo'; fi

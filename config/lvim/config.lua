@@ -36,10 +36,12 @@ lvim.plugins = {
     name = "catppuccin",
     priority = 1000,
   },
+  { "rose-pine/neovim", name = "rose-pine" },
   {
-    "wittyjudge/gruvbox-material.nvim",
+    "sainnhe/gruvbox-material",
     name = "gruvbox-material",
   },
+  { "Everblush/nvim", name = "everblush" },
   {
     "zbirenbaum/copilot-cmp",
     event = "InsertEnter",
@@ -112,7 +114,7 @@ lvim.plugins = {
           -- For all filetypes
           -- Note that setting an entry here replaces all other patterns for this entry.
           -- By setting the 'default' entry below, you can control which nodes you want to
-          -- appear in the context window.
+          -- appear in the context window
           default = {
             "class",
             "function",
@@ -143,12 +145,24 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    "kenn7/vim-arsync",
+    depends = { "prabirshrestha/async.vim" },
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 }
 
 ------------------------
 -- Settings
 ------------------------
-lvim.colorscheme = "everforest"
+-- catppuccin-x, latte, frappe, macchiato, mocha
+-- see everforest insert for soft/medium/hard, adheres to light/dark setting below
+-- rose-pine, rose-pine-moon, rose-pine-dawn
+lvim.colorscheme = "catppuccin-frappe"
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
 lvim.builtin.treesitter.rainbow.enable = true
@@ -160,12 +174,29 @@ vim.opt.listchars = {
   trail = "·",
 }
 vim.opt.fillchars = { eob = " " } -- remove the ~ from end of buffer
-
--- lvim.colorscheme = "catppuccin"
--- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
--- vim.opt.background = "light"
--- lvim.format_on_save.pattern = { "*.lua", "*.py" }
 -- lvim.builtin.lualine.options.theme = "everforest"
+-- vim.filetype.add({ filename = { [".postcss"] = "css" } })
+vim.filetype.add({
+  extension = {
+    postcss = "css",
+    toml = "sh",
+  },
+  filename = {
+    [".eslintrc"] = "json",
+    [".prettierrc"] = "json",
+    [".babelrc"] = "json",
+    [".stylelintrc"] = "json",
+  },
+  pattern = {
+    [".*config/git/config"] = "gitconfig",
+    [".env.*"] = "sh",
+  },
+})
+
+------------------------
+-- Mappings
+------------------------
+lvim.keys.insert_mode["jk"] = "<ESC>"
 
 ------------------------
 -- Treesitter
@@ -207,6 +238,8 @@ formatters.setup({
       "vue",
       "css",
       "scss",
+      "postcss",
+      "pcss",
       "less",
       "html",
       "json",
@@ -225,6 +258,8 @@ lvim.format_on_save.enabled = true
 lvim.format_on_save.pattern = {
   "*.css",
   "*.scss",
+  "*.pcss",
+  "*.postcss",
   "*.html",
   "*.json",
   "*.js",
@@ -248,7 +283,22 @@ linters.setup({
 local lsp_manager = require("lvim.lsp.manager")
 lsp_manager.setup("intelephense")
 
-------------------------
--- Mappings
-------------------------
-lvim.keys.insert_mode["jk"] = "<ESC>"
+require("lvim.lsp.manager").setup("cssls", {
+  settings = {
+    css = { validate = true, lint = {
+      unknownAtRules = "ignore",
+    } },
+    scss = { validate = true, lint = {
+      unknownAtRules = "ignore",
+    } },
+    less = { validate = true, lint = {
+      unknownAtRules = "ignore",
+    } },
+    pcss = { validate = true, lint = {
+      unknownAtRules = "ignore",
+    } },
+    postcss = { validate = true, lint = {
+      unknownAtRules = "ignore",
+    } },
+  },
+})

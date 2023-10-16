@@ -40,7 +40,7 @@ alias hbu="brew update && brew upgrade && brew cleanup && brew doctor"
 
 # Single-letter aliases, for frequently used basics, only if not already set
 if alias_not_used a; then; alias a='alias'; fi
-if alias_not_used c; then; alias cl='clear'; fi
+if alias_not_used cl; then; alias cl='clear'; fi
 if alias_not_used d; then; alias d='date'; fi
 if alias_not_used e; then; alias e='exit'; fi
 if alias_not_used f; then; alias f='find'; fi

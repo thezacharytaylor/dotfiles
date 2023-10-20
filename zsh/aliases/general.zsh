@@ -18,7 +18,7 @@ alias zcfg="vim ~/.zshrc"
 alias zrld="source ~/.zshrc"
 alias scfg="vim ~/.ssh/config"
 alias hcfg="sudo vim /private/etc/hosts"
-alias dcfg="vim ~/Repos/dotfiles"
+alias dcfg="cd ~/Repos/dotfiles; vim"
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # Cleaner file management
@@ -161,6 +161,11 @@ else
   alias lb='ls -lhSA' # List all files sorted by biggest
   alias lm='ls -tA -1' # List files sorted by last modified
 fi
+
+# Eza shortcuts
+if alias_not_used zd; then; alias zd='z dotfiles'; fi
+if alias_not_used zk; then; alias zk='z Kinetic'; fi
+
 
 # Use color diff, if availible
 if command_exists colordiff ; then

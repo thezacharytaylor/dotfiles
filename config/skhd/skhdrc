@@ -40,7 +40,11 @@ lalt -    h : yabai -m window --focus first
 lalt - 0x27 : yabai -m window --focus  last
 
 # Float / Unfloat window: lalt - space
-lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus
+lalt - space : yabai -m window --toggle float layer=below; sketchybar --trigger window_focus
+
+# changer layer (below normal above)
+# alt - t : yabai -m window --layer normal
+# alt + shift - t : yabai -m window --layer below
 
 # Make window zoom to fullscreen: shift + lalt - f
 shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus

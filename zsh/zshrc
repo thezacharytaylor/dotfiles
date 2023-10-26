@@ -13,14 +13,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
-                                                  || source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+                                                  # || source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-[ -d "/opt/homebrew/share/zsh-syntax-highlighting/highlighters" ] && export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters \
-                                                                  || export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+# [ -d "/opt/homebrew/share/zsh-syntax-highlighting/highlighters" ] && export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters \
+                                                                  # || export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
-[ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
-                                                  || source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+                                                  # || source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Directory for all-things ZSH config
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
@@ -34,9 +34,16 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git composer sublime macos wp-cli vi-mode yarn vscode)
+plugins=(git composer macos wp-cli yarn)
 
 source $ZSH/oh-my-zsh.sh
+
+function zvm_config() {
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+}
+
+source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Source all ZSH config files (if present)
 if [[ -d $zsh_dir ]]; then

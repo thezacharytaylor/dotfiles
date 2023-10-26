@@ -1,24 +1,23 @@
 # Install via https://github.com/ronniedroid/getnf
 # Verify installation via `kitty list-fonts | grep Jet`
-# font_family JetBrainsMono Nerd Font Mono Regular
-# font_family Hack Nerd Font Mono Regular
-# font_family Hack Nerd Font Mono FC Ligatured Regular
-# font_family Hack Nerd Font Mono JBM Ligatured Regular
-# font_family Fira Code Regular
-# font_family FantasqueSansM Nerd Font Mono Bold
-font_family JetBrainsMono Nerd Font Mono Regular
-bold_font JetBrainsMono Nerd Font Mono Bold
-italic_font JetBrainsMono Nerd Font Mono Italic
-bold_italic_font JetBrainsMono Nerd Font Mono Bold Italic
-font_size 15
-adjust_line_height 155%
+# VictorMono for High Res, Mononoki for low res
+font_family VictorMono Nerd Font
+bold_font VictorMono Nerd Font Bold
+italic_font VictorMono Nerd Font Italic
+bold_italic_font VictorMono Nerd Font Bold Italic
+# font_family Mononoki Nerd Font
+# bold_font Mononoki Nerd Font Bold
+# italic_font Mononoki Nerd Font Italic
+# bold_italic_font Mononoki Nerd Font Bold Italic
+font_size 19
+adjust_line_height 115%
 
 cursor_blink_interval 0
 window_padding_width 10
 hide_window_decorations yes
 remember_window_size yes
-initial_window_width 680
-initial_window_height 400
+# initial_window_width 680
+# initial_window_height 400
 enable_audio_bell yes
 repaint_delay    10
 allow_remote_control yes
@@ -29,6 +28,12 @@ tab_powerline_style         slanted
 tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
 # editor /Users/zacharytaylor/.local/bin/lvim
 # startup_session ~/Kinetic/
+
+allow_remote_control yes
+listen_on set
+
+symbol_map U+F0001-U+F1af0 VictorMono Nerd Font
+symbol_map U+F8FF,U+100000-U+1018C7 SF Pro
 
 # BEGIN_KITTY_THEME
 # Catppuccin-Mocha

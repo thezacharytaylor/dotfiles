@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git composer macos wp-cli yarn)
+plugins=(git composer macos tmux wp-cli yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,7 +98,7 @@ export NNN_OPTS="H" # 'H' shows the hidden files. Same as option -H (so 'nnn -de
 export LC_COLLATE="C" # hidden files on top
 export NNN_FIFO="/tmp/nnn.fifo" # temporary buffer for the previews
 export NNN_TERMINAL="terminal"
-export NNN_BMS="d:$HOME/Documents;h:$HOME/;D:$HOME/Downloads/;k:$HOME/Kinetic/;K:$HOME/KineticDocs/;r:$HOME/Repos/;c:$HOME/Repos/dotfiles/;S:$HOME/Sync/;s:$HOME/Pictures/screenshots/"
+export NNN_BMS="d:$HOME/Documents;h:$HOME/;D:$HOME/Downloads/;k:$HOME/Kinetic/;K:$HOME/KineticDocs/;r:$HOME/Repos/;c:$HOME/Repos/dotfiles/;S:$HOME/Sync/;s:$HOME/Pictures/screenshots/;w:$HOME/Sync/Images/WallPapers/"
 # export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999" # feel free to change the colors
 export NNN_PLUG='p:preview-tui;c:cbcopy;v:cbpaste' # many other plugins are available here: https://github.com/jarun/nnn/tree/master/plugins
 export SPLIT='v' # to split Kitty vertically
@@ -124,6 +124,9 @@ n () # to cd on quit
             rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+
+# Tmux stuff
+export ZSH_TMUX_UNICODE=true
 
 #--------------------------------------------------------------------------
 # Miscellaneous

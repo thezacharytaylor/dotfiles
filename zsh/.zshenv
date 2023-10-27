@@ -15,6 +15,8 @@ export VISUAL="lvim"
 export GIT_EDITOR=vim
 export TERMINAL="kitty"
 export BROWSER="arc"
+export TERM=xterm-kitty
+[ ! -z "$KITTY_WINDOW_ID" ] && export TERM=xterm-kitty
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Rose Pine Moon | Rose Pine Dawn | Catuppuccin
+# Rose Pine Moon | Rose Pine Dawn | Catuppuccin | Witch Hazel
 
 # Color Palette
 # Rose Pine Moon
@@ -43,17 +43,31 @@
 
 # Catuppuccin Frappe
 # ===============================
-export BLACK=0xff303446
-export WHITE=0xffc6d0f5
-export PINK=0xfff4b8e4
-export RED=0xffe78284
-export GREEN=0xffa6d189
-export BLUE=0xff8caaee
-export YELLOW=0xffe5c890
-export ORANGE=0xffef9f76
-export MAGENTA=0xffca9ee6
-export LAVENDER=0xffbabbf1
-export GREY=0xff949cbb
+# export BLACK=0xff303446
+# export WHITE=0xffc6d0f5
+# export PINK=0xfff4b8e4
+# export RED=0xffe78284
+# export GREEN=0xffa6d189
+# export BLUE=0xff8caaee
+# export YELLOW=0xffe5c890
+# export ORANGE=0xffef9f76
+# export MAGENTA=0xffca9ee6
+# export LAVENDER=0xffbabbf1
+# export GREY=0xff949cbb
+
+# Witch Hazel
+# ===============================
+export BLACK=0xff282634
+export WHITE=0xffF8F8F0
+export PINK=0xffFFB8D1
+export RED=0xffDC7070
+export GREEN=0xff81FFBE
+export BLUE=0xff1Bc5E0
+export YELLOW=0xffFFF9A3
+export ORANGE=0xff894E63
+export MAGENTA=0xffAE81FF
+export LAVENDER=0xffDCC8FF
+export GREY=0xffBFBFBF
 
 # General Palette Colors
 # ===============================
@@ -86,10 +100,18 @@ export TRANSPARENT=0x00000000
 
 # Catuppuccin
 # ===============================
+# export BAR_COLOR=$BLACK
+# export BAR_BORDER_COLOR=$MAGENTA
+# export BACKGROUND_1=0xff414559
+# export BACKGROUND_2=0xff51576d
+# export POPUP_BACKGROUND_COLOR=$BLACK
+
+# Witch Hazel Hypercolor
+# ===============================
 export BAR_COLOR=$BLACK
 export BAR_BORDER_COLOR=$MAGENTA
-export BACKGROUND_1=0xff414559
-export BACKGROUND_2=0xff51576d
+export BACKGROUND_1=0xff3B364E
+export BACKGROUND_2=0xff282634
 export POPUP_BACKGROUND_COLOR=$BLACK
 
 # General Bar Colors

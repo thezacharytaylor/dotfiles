@@ -38,6 +38,9 @@ alias vsec="valet secure"
 alias wpsr="wp search-replace"
 alias hbu="brew update && brew upgrade && brew cleanup && brew doctor"
 
+alias ta="tmux -u attach -t"
+alias tau="tmux -u attach -t"
+
 # Single-letter aliases, for frequently used basics, only if not already set
 if alias_not_used a; then; alias a='alias'; fi
 if alias_not_used cl; then; alias cl='clear'; fi

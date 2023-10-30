@@ -4,7 +4,7 @@ add_newline = false
 command_timeout = 3000
 
 format = """
-[󰆧](blue) [$directory]($style)\
+[󰆧](turquoise) [$directory]($style)\
 $git_branch$git_state$git_status\
 $nodejs\
 $php\
@@ -26,18 +26,18 @@ $character"""
 # format = '[$untracked$modified$staged$deleted$renamed]($style) '
 
 # Sets user-defined palette
-palette = "catppuccin_macchiato"
+palette = "witch_hazel_hypercolor"
 
 [character]
 # Note the use of Catppuccin color 'maroon'
-success_symbol = "[[](teal) ❯](mauve)"
-error_symbol = "[[󰴔](red) ❯](pink)"
-vimcmd_symbol = "[[](green) ❮](mauve)"
+success_symbol = "[[](turquoise) ❯](lilac)"
+error_symbol = "[[󰴔](clay) ❯](pink)"
+vimcmd_symbol = "[[](mint) ❮](lilac)"
 
 [directory]
 truncation_length = 4
 # Catppuccin 'lavender'
-style = "bold lavender"
+style = "bold darklilac"
 
 # palette tables should be last in the config ⚓️
 [palettes.catppuccin_macchiato]
@@ -151,3 +151,22 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[palettes.witch_hazel_hypercolor]
+lightgrey = "#BFBFBF"
+linen = "#F8F8F0"
+mint = "#81FFBE"
+pink = "#FFB8D1"
+brick = "#DC7070"
+clay = "#894E63"
+rouge = "#960050"
+turquoise = "#1Bc5E0"
+sunflower = "#FFF9A3"
+
+lilac = "#DCC8FF"
+darklilac = "#AE81FF"
+amethyst = "#131218"
+purps = "#282634"
+shadow = "#3B364E"
+midnight = "#1e0010"
+other = "#FFF9A3"

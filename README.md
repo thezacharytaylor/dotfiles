@@ -17,9 +17,9 @@ My macOS configuration files. Homebrew not included. Need to clean this up a bit
 * There's a custom color for my MacOs highlight as well. Try googling the cli for that.
 
 ## TODO:
-[ ] Move all folders to config folder.
-[ ] Automate/get a manager
-[ ] Get a theme switcher
-[ ] Make SBar Rose Pine public
-[ ] Contribute to Witch Hazel (Kitty and SBar)
-[ ] Fix lualine for Witch Hazel
+[] Move all folders to config folder.
+[] Automate/get a manager
+[] Get a theme switcher
+[] Make SBar Rose Pine public
+[] Contribute to Witch Hazel (Kitty and SBar)
+[] Fix lualine for Witch Hazel

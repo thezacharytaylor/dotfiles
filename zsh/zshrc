@@ -133,7 +133,7 @@ ZSH_TMUX_UNICODE=true
 # Miscellaneous
 #--------------------------------------------------------------------------
 up() { . up.sh "$1"; }
-rep() { . rep.sh "$1"; }
+# rep() { . rep.sh "$1"; }
 
 function brew() {
   command brew "$@" 

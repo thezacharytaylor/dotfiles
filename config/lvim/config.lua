@@ -41,7 +41,19 @@ lvim.plugins = {
     "sainnhe/gruvbox-material",
     name = "gruvbox-material",
   },
+  { "theacodes/witchhazel", name = "witchhazel" },
   { "Everblush/nvim", name = "everblush" },
+  { "katawful/kat.nvim", name = "kat" },
+  {
+    "baliestri/aura-theme",
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+      vim.cmd([[colorscheme aura-dark]])
+    end,
+  },
+  { "EdenEast/nightfox.nvim" },
   {
     "zbirenbaum/copilot-cmp",
     event = "InsertEnter",
@@ -163,6 +175,12 @@ lvim.plugins = {
       vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
     end,
   },
+  {
+    "fei6409/log-highlight.nvim",
+    config = function()
+      require("log-highlight").setup({})
+    end,
+  },
 }
 
 ------------------------
@@ -171,7 +189,7 @@ lvim.plugins = {
 -- catppuccin-x, latte, frappe, macchiato, mocha
 -- see everforest insert for soft/medium/hard, adheres to light/dark setting below
 -- rose-pine, rose-pine-moon, rose-pine-dawn
-lvim.colorscheme = "catppuccin-frappe"
+lvim.colorscheme = "witchhazel"
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
 lvim.builtin.treesitter.rainbow.enable = true
@@ -183,7 +201,7 @@ vim.opt.listchars = {
   trail = "·",
 }
 vim.opt.fillchars = { eob = " " } -- remove the ~ from end of buffer
--- lvim.builtin.lualine.options.theme = "everforest"
+-- lvim.builtin.lualine.options.theme = "palenight"
 -- vim.filetype.add({ filename = { [".postcss"] = "css" } })
 vim.filetype.add({
   extension = {
@@ -199,6 +217,7 @@ vim.filetype.add({
   pattern = {
     [".*config/git/config"] = "gitconfig",
     [".env.*"] = "sh",
+    ["*.ssh_config"] = "sshconfig",
   },
 })
 
@@ -206,18 +225,36 @@ vim.filetype.add({
 -- Mappings
 ------------------------
 lvim.keys.insert_mode["jk"] = "<ESC>"
+lvim.keys.insert_mode["jj"] = "<ESC>"
 
 ------------------------
 -- Treesitter
 ------------------------
 lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "css",
+  "diff",
+  "dockerfile",
+  "gitattributes",
+  "gitcommit",
+  "gitignore",
+  "html",
   "javascript",
+  "jsdoc",
   "json",
+  "jsonc",
   "lua",
+  "markdown",
+  "markdown_inline",
+  "php",
+  "scss",
+  -- "tree-sitter-ssh-config",
+  "toml",
   "typescript",
   "tsx",
-  "css",
-  "php",
+  "vim",
+  "vimdoc",
+  "yaml",
 }
 
 lvim.lsp.installer.setup.ensure_installed = {

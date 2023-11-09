@@ -7,6 +7,126 @@
 # nvm
 # valet
 
+## Homebrew
+# Install xCode cli tools
+echo "Installing commandline tools..."
+xcode-select --install
+
+## Install
+echo "Installing Brew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew analytics off
+
+## Taps
+echo "Tapping Brew..."
+brew tap homebrew/cask-fonts
+brew tap FelixKratz/formulae
+brew tap koekeishiya/formulae
+
+## Formulae
+echo "Installing Brew Formulae..."
+### Essentials
+echo "Installing Brew Formulae..."
+### Essentials
+brew install gsl
+brew install llvm
+brew install boost
+brew install libomp
+brew install armadillo
+brew install wget
+brew install jq
+brew install ripgrep
+brew install bear
+brew install mas
+brew install gh
+brew install ifstat
+brew install switchaudio-osx
+brew install skhd
+brew install sketchybar
+brew install borders
+brew install yabai
+brew install nnn
+
+### Terminal
+brew install neovim
+brew install starship
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
+
+### Nice to have
+brew install lulu
+brew install btop
+brew install svim
+brew install lazygit
+brew install wireguard-go
+brew install dooit
+brew install fyabai --head
+brew install fnnn --head
+
+## Casks
+echo "Installing Brew Casks..."
+### Terminals & Browsers
+brew install --cask alacritty
+brew install --cask brave-browser
+brew install --cask eloston-chromium
+brew install --cask kitty
+brew install --cask orion
+brew install --cask polypane
+brew install --cask vscodium
+
+### Office
+brew install --cask 1password
+brew install --cask 1password-cli
+brew install --cask betterdiscord-installer
+brew install --cask calibre
+brew install --cask discord
+brew install --cask gimp
+# brew install --cask inkscape
+brew install --cask libreoffice
+brew install --cask zoom
+# brew install --cask meetingbar
+brew install --cask skim
+brew install --cask signal
+brew install --cask slack
+brew install --cask standard-notes
+# brew install --cask vlc
+
+### Reversing
+# brew install --cask machoview
+# brew install --cask hex-fiend
+# brew install --cask cutter
+brew install --cask sloth
+
+### Nice to have
+brew install --cask alfred
+brew install --cask db-browser-for-sqlite
+brew install --cask insomnia
+brew install --cask karabiner-elements
+brew install --cask sequel-ace
+brew install --cask sync
+
+### Fonts
+brew install --cask sf-symbols
+brew install --cask font-jetbrains-mono
+brew install --cask font-iosevka-nerd-font
+brew install --cask font-iosevka-term-nerd-font
+brew install --cask font-meslo-lg-nerd-font
+brew install --cask font-mononoki-nerd-font
+brew install --cask font-sf-mono-nerd-font-ligaturized
+brew install --cask font-victor-mono-nerd-font
+# brew install --cask font-fira-code
+# brew install --cask font-blex-mono-nerd-font
+# brew install --cask font-caskaydia-cove-nerd-font
+# brew install --cask font-hack-nerd-font
+# brew install --cask font-sauce-code-pro-nerd-font
+# brew install --cask font-ubuntu-mono-nerd-font
+
+# Mac App Store Apps
+echo "Installing Mac App Store Apps..."
+mas install 1451685025 #Wireguard
+# mas install 497799835 #xCode
+# mas install 1480933944 #Vimari
+
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Setup starting..."
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
@@ -40,6 +160,5 @@ ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-
 
 echo "Setup finished."

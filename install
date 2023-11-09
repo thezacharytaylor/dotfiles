@@ -26,8 +26,6 @@ brew tap koekeishiya/formulae
 ## Formulae
 echo "Installing Brew Formulae..."
 ### Essentials
-echo "Installing Brew Formulae..."
-### Essentials
 brew install fzf
 brew install gsl
 brew install llvm

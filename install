@@ -2,7 +2,7 @@
 # TODO:
 # Add sketchybar setup
 # chmod for scripts, including sketchy plugins
-# brew
+# lunarvim
 # composer
 # nvm
 # valet
@@ -28,6 +28,7 @@ echo "Installing Brew Formulae..."
 ### Essentials
 echo "Installing Brew Formulae..."
 ### Essentials
+brew install fzf
 brew install gsl
 brew install llvm
 brew install boost
@@ -43,25 +44,75 @@ brew install ifstat
 brew install switchaudio-osx
 brew install skhd
 brew install sketchybar
-brew install borders
+# brew install borders
+brew install bat
 brew install yabai
 brew install nnn
+brew install zoxide
+brew install eza
+brew install wp-cli
 
 ### Terminal
 brew install neovim
+brew install lazygit
+brew install osx-cpu-temp
+brew install rsync
 brew install starship
+brew install tmux
+brew install tree
+brew install tree-sitter
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install zsh-vi-mode
 
 ### Nice to have
 brew install lulu
 brew install btop
+brew install duf
 brew install svim
-brew install lazygit
 brew install wireguard-go
 brew install dooit
-brew install fyabai --head
-brew install fnnn --head
+brew install bandwhich
+brew install bettercap
+brew install composer
+brew install coreutils
+brew install ctop
+brew install curl
+brew install navi
+brew install pinentry-mac
+brew install glances
+brew install httpie
+brew install ifstat
+# brew install curlie
+brew install docker
+brew install docker-completion
+brew install lazydocker
+brew install lua
+brew install lua-language-server
+brew install luajit
+brew install macvim
+brew install mailpit
+brew install make
+brew install mariadb
+brew install nginx
+brew install nvm
+brew install openssl
+brew install php@8.1
+brew install php@8.2
+brew install shopify-cli
+brew install speedtest-cli
+brew install sqlite
+brew install tailspin
+brew install task
+brew install thefuck
+brew install theme-check
+brew install themekit
+brew install tidy-html5
+brew install unbound
+
+### Fun
+brew install cowsay
+brew install fortune
 
 ## Casks
 echo "Installing Brew Casks..."

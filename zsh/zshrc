@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git composer hitchhiker macos tmux wp-cli yarn)
+plugins=(brew chucknorris composer git hitchhiker macos tmux wp-cli yarn)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -40,6 +40,7 @@ alias hbu="brew update && brew upgrade && brew cleanup && brew doctor"
 
 alias ta="tmux -u attach -t"
 alias tau="tmux -u attach -t"
+alias ts="tmux -u new-session -s"
 
 # Single-letter aliases, for frequently used basics, only if not already set
 if alias_not_used a; then; alias a='alias'; fi

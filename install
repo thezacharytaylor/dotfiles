@@ -116,6 +116,7 @@ brew install fortune
 echo "Installing Brew Casks..."
 ### Terminals & Browsers
 brew install --cask alacritty
+brew install --cask arc
 brew install --cask brave-browser
 brew install --cask eloston-chromium
 brew install --cask kitty

@@ -15,6 +15,9 @@ alias gps="git push" # Push local commits to <origin> <branch>
 alias gpl="git pull" # Pull changes with <origin> <branch>
 alias gf="git fetch" # Download branch changes, without modifying files
 
+# Copilot
+alias ghc="gh copilot" # Run copilot
+
 # Merging and Rebasing
 alias grb="git rebase" # Rebase the current HEAD into <branch>
 alias grba="git rebase --abort" # Cancel current rebase sesh

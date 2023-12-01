@@ -202,11 +202,15 @@ alias pa='pbpaste' # Paste clipboard contents
 alias myip='curl icanhazip.com'
 alias weather='curl wttr.in'
 alias weather-short='curl "wttr.in?format=3"'
-alias cheat='curl cheat.sh/'
+# alias cheat='curl cheat.sh/'
 alias tinyurl='curl -s "http://tinyurl.com/api-create.php?url='
 alias joke='curl https://icanhazdadjoke.com'
 alias hackernews='curl hkkr.in'
 alias worldinternet='curl https://status.plaintext.sh/t'
+
+cheatsh () {
+  curl cheat.sh/$1
+}
 
 # Random lolz
 alias cls='clear;l' # Clear and ls

@@ -17,10 +17,13 @@ alias vsc="codium ."
 alias zcfg="vim ~/.zshrc"
 alias zrld="source ~/.zshrc"
 alias scfg="vim ~/.ssh/config"
-alias kinssh="( cd ~/Repos/kin-ssh-config; git pull )"
 alias hcfg="sudo vim /private/etc/hosts"
 alias dcfg="cd ~/Repos/dotfiles; vim"
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Kinetic
+alias kinssh="( cd ~/Repos/kin-ssh-config; git pull )"
+alias kinsage="( cd ~/Kinetic/kinsage; git pull )"
 
 # Cleaner file management
 alias rm='rm -i'
@@ -34,11 +37,12 @@ alias eza="/opt/homebrew/bin/eza"
 alias lg="lazygit"
 alias cduo="composer dump-autoload -o"
 alias bigbois="find / -type f -size +1G -ls"
-alias s="kitty +kitten ssh"
+# alias s="kitty +kitten ssh"
 alias vsec="valet secure"
 alias wpsr="wp search-replace"
-alias hbu="brew update && brew upgrade && brew cleanup && brew doctor"
+# alias hbu="brew update && brew upgrade && brew cleanup && brew doctor"
 
+# Tmux
 alias ta="tmux -u attach -t"
 alias tau="tmux -u attach -t"
 alias ts="tmux -u new-session -s"
@@ -216,4 +220,5 @@ alias gtfo='exit'
 # Bringing it all together
 # Brew update, composer global update, check Kinetic SSH config, start tmux
 alias letsrockbaby='( bugbc; cgu; valet restart; kinssh; ts werk; )'
+alias magic='( tmux new -s magic; run "echo hello"; )'
 alias blessedbe='( tksv; )'

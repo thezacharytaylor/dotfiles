@@ -297,5 +297,8 @@ open-github-pulls() {
 
 alias ghp='open-github-pulls'
 
+# Lulz
+alias gitgud=git commit -m "$(curl -s https://whatthecommit.com/index.txt)"
+
 # Prompt for main SSH key passphrase, so u don't need to enter it again until session killed
 alias add-key='eval "$(ssh-agent)" && ssh-add ~/.ssh/id_rsa'

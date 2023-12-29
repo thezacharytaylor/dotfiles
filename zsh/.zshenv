@@ -31,8 +31,8 @@ export LESSHISTFILE="-" # Disable less history.
 
 # Encodings, languges and misc settings
 export LANG='en_GB.UTF-8';
+export LC_ALL='en_GB.UTF-8';
 export PYTHONIOENCODING='UTF-8';
-export LC_ALL='C';
 export ZSH="$HOME/.oh-my-zsh"
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export ARTISAN_OPEN_ON_MAKE_EDITOR=nvr

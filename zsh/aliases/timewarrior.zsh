@@ -30,6 +30,9 @@ alias twtag='timew tag'
 
 # Functions
 # Start, tag, annotate, and optionally backdate
+# TODO: add support for multiple tags
+# TODO: add support for no tag
+# TODO: add support for no annotation
 twaa() {
   local tag="kin";
   local ann="Miscellaneous";

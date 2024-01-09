@@ -44,7 +44,7 @@ twaa() {
   fi
     
   if [[ -n "$3" ]]; then
-    twa $tag $3 && twann $ann
+    twa $3 ago $tag && twann $ann
   else
     twa $tag && twann $ann
   fi

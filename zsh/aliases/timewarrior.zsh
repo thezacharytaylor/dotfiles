@@ -27,3 +27,26 @@ alias twd='timew delete'
 # Labeling
 alias twann='timew annotate'
 alias twtag='timew tag'
+
+# Functions
+# Start, tag, annotate, and optionally backdate
+twaa() {
+  local tag="kin";
+  local ann="Miscellaneous";
+
+  echo $1 $3 "$2"
+  if [[ -n "$1" ]]; then
+    tag="$1"
+  fi
+
+  if [[ -n "$2" ]]; then
+    ann="$2"
+  fi
+    
+  if [[ -n "$3" ]]; then
+    twa $tag $3 && twann $ann
+  else
+    twa $tag && twann $ann
+  fi
+}
+

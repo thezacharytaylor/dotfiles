@@ -54,6 +54,7 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/aliases/alias-tips.zsh
   source ${zsh_dir}/aliases/timewarrior.zsh
   source ${zsh_dir}/aliases/sync.zsh
+  source ${zsh_dir}/aliases/wordpress.zsh
 
   # Setup Antigen, and import plugins
   # source ${zsh_dir}/helpers/setup-antigen.zsh

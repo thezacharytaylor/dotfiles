@@ -17,7 +17,8 @@ setupwp() {
     cp wp-config-sample.php wp-config.php
   fi
 
-  v
+  # Launch editor
+  lvim
 }
 
 finishwp() {
@@ -36,7 +37,9 @@ finishwp() {
     wp db import $dbname.sql
     wp search-replace "$1" "$2" --all-tables
     wp cache flush
-    v
+
+    # Launch editor
+    lvim
   else
     echo "No database file found."
   fi 

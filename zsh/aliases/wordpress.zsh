@@ -13,13 +13,15 @@ setupwp() {
     dbname=$4
   fi
 
+  git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git $2
   
   if [[ -f $dbname.zip ]]; then
-    git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git .
+    mv $2/* .
+    rm -rf $2
     wp core download
     unzip $dbname.zip
   else
-    git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git $2 && cd $2
+    cd $2
     wp core download
   fi
   

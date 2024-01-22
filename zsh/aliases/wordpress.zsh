@@ -2,17 +2,22 @@
 
 # setupwp clientcode domainname domainextension [dbname]
 setupwp() {
+  local dbname="DELETEME"
 
   # clone repo
   if [[ "$#" -lt 3 ]]; then
     echo "Invalid number of arguments, expected 3. Client code, domain name, domain extension."
   fi
 
+  if [[ -n "$4" ]]; then
+    dbname=$4
+  fi
+
   git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git $2 && cd $2
   wp core download
   
-  if [[ -f DELETEME.zip ]]; then
-    unzip DELETEME.zip
+  if [[ -f $dbname.zip ]]; then
+    unzip $dbname.zip
   fi
   
   if [[ ! -f wp-config.php ]]; then

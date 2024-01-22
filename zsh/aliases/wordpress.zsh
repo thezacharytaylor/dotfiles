@@ -1,6 +1,8 @@
 # setupwp
 
+# setupwp clientcode domainname domainextension [dbname]
 setupwp() {
+
   # clone repo
   if [[ "$#" -lt 3 ]]; then
     echo "Invalid number of arguments, expected 3. Client code, domain name, domain extension."
@@ -21,6 +23,7 @@ setupwp() {
   lvim
 }
 
+# finishwp olddomain newdomain [dbname]
 finishwp() {
   local dbname="DELETEME"
 

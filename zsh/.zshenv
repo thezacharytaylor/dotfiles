@@ -30,8 +30,8 @@ export GIT_CONFIG="${HOME}/.gitconfig"
 export LESSHISTFILE="-" # Disable less history.
 
 # Encodings, languges and misc settings
-export LANG='en_GB.UTF-8';
-export LC_ALL='en_GB.UTF-8';
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
 export PYTHONIOENCODING='UTF-8';
 export ZSH="$HOME/.oh-my-zsh"
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket

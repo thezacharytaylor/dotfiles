@@ -59,9 +59,8 @@ if [[ -d "$WORKDIR/trellis" ]]; then
 	trellis init
 fi
 
-echo "✅ Open editor"
-# code .
-lvim
+echo "✅ Open editor $EDITOR"
+$EDITOR .
 
 echo "👯‍"
 return

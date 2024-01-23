@@ -1,7 +1,10 @@
-# setupwp
+# Setup WordPress Locally Functions
 # NOTE: SetupWP is a work in progress
-# NOTE: Set your editor of choice with `export EDITOR="code -w"`
 # Sets up WP for generic, brink, kadence, and sage 
+# Two functions: setupwp and finishwp largely handle the process
+# setupwp gets everything going then allows you to edit wp-config.php
+# before moving on.
+# NOTE: Set your editor of choice with `export EDITOR="code -w"`
 # TODO: finish Kadence setup (from scratch)
 # TODO: check if Brink needs any considerations
 # TODO: Sage setup
@@ -52,7 +55,7 @@ setupwp() {
   # TODO: make dir if not in dir for kadence
   if [[ ! $flag_k && ! -d .git ]]; then
     echo "ran git pull on $1-$2-$3"
-    # git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git $2
+    git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git $2
   fi
   
   if [[ -f $db_name.zip ]]; then
@@ -61,13 +64,13 @@ setupwp() {
       rm -rf $2
     fi
 
-    # wp core download
-    echo "wp core download"
+    wp core download
+    echo "wp core downloaded"
     unzip $db_name.zip
   elif [[ -d $2 ]]; then
     cd $2
-    # wp core download
-    echo "wp core download"
+    wp core download
+    echo "wp core downloaded"
   else
     echo "No database file or directory found."
   fi
@@ -75,14 +78,14 @@ setupwp() {
   if [[ ! -f wp-config.php ]]; then
     # Maybe add echo "define('WP_ENVIRONMENT_TYPE', 'local');" >> wp-config.php
     # Maybe use sed (free BSD on Mac) of brew gsed (gnu sed) to place it properly
-    # cp wp-config-sample.php wp-config.php
-    echo "wp config create"
+    cp wp-config-sample.php wp-config.php
+    echo "wp config created"
   fi
 
   # valet secure $2
   # Launch editor
+  echo "Launching editor..."
   $EDITOR wp-config.php
-  # echo "lvim"
 }
 
 # finishwp olddomain newdomain [dbname]

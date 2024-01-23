@@ -13,7 +13,8 @@
 # TODO: add call to download mu-plugins
 # TODO: add call to download kinsta mu-plugins
 setupwp() {
-  local dbname="DELETEME"
+  local current_dir=$PWD:t
+  local db_name="DELETEME"
   local flag_b flag_g flag_k flag_K flag_s
 
   if [[ "$#" -lt 3 ]]; then
@@ -42,7 +43,7 @@ setupwp() {
 
   # Set database name
   if [[ -n "$4" ]]; then
-    dbname=$4
+    db_name=$4
   fi
 
   # Factor in that this might be a kadence
@@ -54,7 +55,7 @@ setupwp() {
     # git clone --depth=1 git@github.com:KineticTeam/$1-$2-$3.git $2
   fi
   
-  if [[ -f $dbname.zip ]]; then
+  if [[ -f $db_name.zip ]]; then
     if [[ ! $flag_k ]]; then
       mv $2/* .
       rm -rf $2
@@ -62,7 +63,7 @@ setupwp() {
 
     # wp core download
     echo "wp core download"
-    unzip $dbname.zip
+    unzip $db_name.zip
   elif [[ -d $2 ]]; then
     cd $2
     # wp core download
@@ -86,24 +87,24 @@ setupwp() {
 
 # finishwp olddomain newdomain [dbname]
 finishwp() {
-  local dbname="DELETEME"
+  local db_name="DELETEME"
 
   if [[ "$#" -lt 2 ]]; then
     echo "Invalid number of arguments, expected 2. Old domain name and test domain name."
   fi
 
   if [[ -n "$3" ]]; then
-    dbname=$3
+    db_name=$3
   fi
 
-  if [[ -f $dbname.sql ]]; then
+  if [[ -f $db_name.sql ]]; then
     wp db create
-    wp db import $dbname.sql
+    wp db import $db_name.sql
     wp search-replace "$1" "$2" --all-tables
     wp cache flush
 
     # Launch editor
-    lvim
+    $EDITOR .
   else
     echo "No database file found."
   fi 

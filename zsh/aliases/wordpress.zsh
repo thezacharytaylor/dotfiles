@@ -113,15 +113,40 @@ finishwp() {
   fi 
 }
 
+# Get core plugins
+# Run from WordPress root
+getcoreplugins() {
+  wp plugin install --activate \
+    disable-comments \
+    environment-debug-admin-toolbar \
+    header-footer-code-manager \
+    simple-custom-post-order \
+    query-monitor \
+    redirection \
+    safe-svg \
+    wp-force-login
+  echo "Core plugins installed"
+}
+
 # Get Kadence plugins and theme
 getkadence() {
 }
 
 # Get Kinsta mu-plugins
+# Run from WordPress root
 getkinstamu() {
+  echo "kinsta-mu-plugins added"
 }
 
 # Get mu-plugins
+# Run from WordPress root
 getmu() {
+  if [[ ! -d wp-content/mu-plugins ]]; then
+    mkdir wp-content/mu-plugins
+    echo "mu-plugins directory created"
+  fi
 
+  mv tmprepomu/wp-content/mu-plugins/* wp-content/mu-plugins
+  rm -rf tmprepomu
+  echo "mu-plugins added"
 }

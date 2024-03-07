@@ -135,7 +135,7 @@ alias cdrd="cd"" ~/Repos/dotfiles"
 alias dud='du -d 1 -h' # List sizes of files within directory
 alias duf='du -sh *' # List total size of current directory
 alias ff='find . -type f -name' # Find a file by name within current directory
-(( $+commands[fd] )) || alias fd='find . -type d -name' # Find direcroy by name
+(( $+commands[fd] )) || alias fd='find . -type d -name' # Find directory by name
 
 # Command line history
 alias h='history' # Shows full history

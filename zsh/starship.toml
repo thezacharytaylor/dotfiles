@@ -1,10 +1,13 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+# "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
 command_timeout = 3000
 
 format = """
-[󰆧](turquoise) [$directory]($style)\
+$status\
+$jobs\
+$battery\
+[$directory]($style)\
 $git_branch$git_state$git_status\
 $nodejs\
 $php\
@@ -13,11 +16,14 @@ $crystal\
 $custom\
 $sudo\
 $cmd_duration\
-$line_break\
-$status\
-$jobs\
-$battery\
 $character"""
+
+# For Kitty or non-warp terms
+# $line_break\
+# $status\
+# $jobs\
+# $battery\
+# $character"""
 
 # [git_branch]
 # format = '[\($branch\)]($style)'

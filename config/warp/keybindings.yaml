@@ -1,0 +1,4 @@
+---
+"terminal:scroll_up_one_line": ctrl-shift-cmd-up
+"terminal:scroll_down_one_line": ctrl-shift-cmd-down
+"workspace:toggle_ai_assistant": none

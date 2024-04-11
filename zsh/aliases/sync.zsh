@@ -11,9 +11,9 @@ kinsync() {
     file=$4
   fi
 
-  if [ $1 = '--dev' ]; then
+  if [[ $1 = '--dev' ]]; then
     rsync -vzP kin-dev:~/webapps/$2/{$file.zip,$file.sql} $3
-  elif [$1 = '--open']; then
+  elif [[ $1 = '--open' ]]; then
     rsync -vzP $2{$file.zip,$file.sql} $3
   else
     echo "Invalid mode"

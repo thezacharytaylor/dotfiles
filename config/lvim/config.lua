@@ -2,6 +2,7 @@
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
+-- Other themes: 'ray-x/starry.nvim'
 
 ------------------------
 -- Plugins
@@ -36,7 +37,17 @@ lvim.plugins = {
     name = "catppuccin",
     priority = 1000,
   },
-  { "rose-pine/neovim", name = "rose-pine" },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+      require("rose-pine").setup({
+        styles = {
+          italic = false,
+        },
+      })
+    end,
+  },
   {
     "sainnhe/gruvbox-material",
     name = "gruvbox-material",
@@ -181,6 +192,21 @@ lvim.plugins = {
       require("log-highlight").setup({})
     end,
   },
+  {
+    "chipsenkbeil/distant.nvim",
+    branch = "v0.3",
+    config = function()
+      require("distant"):setup()
+    end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    ft = { "rust" },
+  },
+  {
+    "mechatroner/rainbow_csv",
+  },
 }
 
 ------------------------
@@ -189,8 +215,8 @@ lvim.plugins = {
 -- catppuccin-x, latte, frappe, macchiato, mocha
 -- see everforest insert for soft/medium/hard, adheres to light/dark setting below
 -- rose-pine, rose-pine-moon, rose-pine-dawn
-lvim.colorscheme = "witchhazel"
-vim.opt.background = "dark"
+lvim.colorscheme = "rose-pine-dawn"
+vim.opt.background = "light"
 vim.opt.relativenumber = true
 lvim.builtin.treesitter.rainbow.enable = true
 vim.opt.relativenumber = true
@@ -247,6 +273,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "markdown",
   "markdown_inline",
   "php",
+  "rust",
   "scss",
   -- "tree-sitter-ssh-config",
   "toml",
@@ -264,6 +291,7 @@ lvim.lsp.installer.setup.ensure_installed = {
   "cssls",
   "tsserver",
   "tailwindcss",
+  "rust_analyzer",
 }
 
 -- ------------------------
@@ -272,6 +300,7 @@ lvim.lsp.installer.setup.ensure_installed = {
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
   { command = "phpcsfixer", args = { "--rules=@PSR12" }, filetypes = { "php" } },
+  { command = "blade-formatter", filetypes = { "blade.php" } },
   { command = "stylua", filetypes = { "lua" } },
   {
     command = "prettierd",
@@ -328,6 +357,7 @@ linters.setup({
 ------------------------
 local lsp_manager = require("lvim.lsp.manager")
 lsp_manager.setup("intelephense")
+-- lsp_manager.setup("rust_analyzer")
 
 require("lvim.lsp.manager").setup("cssls", {
   settings = {

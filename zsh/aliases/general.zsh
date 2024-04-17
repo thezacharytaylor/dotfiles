@@ -221,6 +221,25 @@ alias gtfo='exit'
 
 # Bringing it all together
 # Brew update, composer global update, check Kinetic SSH config, start tmux
-alias letsrockbaby='( bubu; cgu; valet restart; kinssh; ts werk; )'
+alias letsrockbaby='( bubu; cgu; valet restart; kinssh; )' # ts werk;
 alias magic='( tmux new -s magic; run "echo hello"; )'
-alias blessedbe='( two; tksv; )'
+alias blessedbe='( two; )' #tksv;
+
+updatewpadmintheme () {
+  # Specify the base directory to start from
+  base_dir="$1"
+
+  # Define the command to run in each directory
+  command_to_run="wp user update dev@kinetic.com --admin_color=sunrise"  # Replace with the actual command you want to execute
+
+  # Iterate through all directories within the base directory
+  for dir in "$base_dir"/*/; do
+      if [[ -d "$dir" ]]; then  # Check if it's a directory
+          cd "$dir"  # Change to the directory
+          echo "Running command in $dir..."
+          wp user update kineticteam@gmail.com --admin_color=sunrise
+          # $command_to_run  # Execute the specified command
+          cd -  # Return to the previous directory
+      fi
+  done
+}

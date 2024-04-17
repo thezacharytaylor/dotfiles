@@ -6,7 +6,6 @@ command_timeout = 3000
 format = """
 $status\
 $jobs\
-$battery\
 [$directory]($style)\
 $git_branch$git_state$git_status\
 $nodejs\
@@ -22,28 +21,51 @@ $character"""
 # $line_break\
 # $status\
 # $jobs\
-# $battery\
 # $character"""
+
+# Sets user-defined palette
+palette = "rose_pine_dawn"
+
+[character]
+# Note the use of Catppuccin color 'maroon'
+# success_symbol = "[[](turquoise) ❯](lilac)"
+# error_symbol = "[[󰴔](clay) ❯](pink)"
+# vimcmd_symbol = "[[](mint) ❮](lilac)"
+success_symbol = "[❯](rose)"
+error_symbol = "[[❯](love)](love)"
+vimcmd_symbol = "[[❯](foam)](iris)"
 
 # [git_branch]
 # format = '[\($branch\)]($style)'
 
-# [git_status]
+[git_status]
+disabled = false
 # format = '[$untracked$modified$staged$deleted$renamed]($style) '
 
-# Sets user-defined palette
-palette = "witch_hazel_hypercolor"
+[git_commit]
+commit_hash_length = 7
+tag_disabled = false
+only_detached = false
 
-[character]
-# Note the use of Catppuccin color 'maroon'
-success_symbol = "[[](turquoise) ❯](lilac)"
-error_symbol = "[[󰴔](clay) ❯](pink)"
-vimcmd_symbol = "[[](mint) ❮](lilac)"
+[battery]
+disabled = true
+
+[python]
+disabled = true
+
+[cmake]
+disabled = true
 
 [directory]
+read_only = "(read only)"
 truncation_length = 4
+
+[git_metrics]
+disabled = false
+format = '([+$added]($added_style)) ([-$deleted]($deleted_style)) '
+
 # Catppuccin 'lavender'
-style = "bold darklilac"
+style = "bold rose"
 
 # palette tables should be last in the config ⚓️
 [palettes.catppuccin_macchiato]
@@ -176,3 +198,12 @@ purps = "#282634"
 shadow = "#3B364E"
 midnight = "#1e0010"
 other = "#FFF9A3"
+
+[palettes.rose_pine_dawn]
+# Add the rest, they're all base colors
+love = "#B4637A"
+gold = "#EA9D34"
+rose = "#D7827E"
+pine = "#286983"
+foam = "#56949F"
+iris = "#907AA9"

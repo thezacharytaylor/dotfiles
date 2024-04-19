@@ -20,15 +20,15 @@ lvim.plugins = {
       require("everforest").setup({
         -- Controls the "hardness" of the background. Options are "soft", "medium" or "hard".
         -- Default is "medium".
-        background = "hard",
+        -- background = "hard",
         -- How much of the background should be transparent. Options are 0, 1 or 2.
         -- Default is 0.
         --
         -- 2 will have more UI components be transparent (e.g. status line
         -- background).
-        transparent_background_level = 0,
+        transparent_background_level = 2,
         -- Whether italics should be used for keywords, builtin types and more.
-        italics = false,
+        italics = true,
       })
     end,
   },
@@ -43,7 +43,7 @@ lvim.plugins = {
     config = function()
       require("rose-pine").setup({
         styles = {
-          italic = false,
+          italic = true,
         },
       })
     end,
@@ -61,10 +61,14 @@ lvim.plugins = {
     priority = 1000,
     config = function(plugin)
       vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
-      vim.cmd([[colorscheme aura-dark]])
+      -- vim.cmd([[colorscheme aura-dark]])
     end,
   },
   { "EdenEast/nightfox.nvim" },
+  {
+    "oxfist/night-owl.nvim",
+    name = "night-owl",
+  },
   {
     "zbirenbaum/copilot-cmp",
     event = "InsertEnter",
@@ -125,28 +129,28 @@ lvim.plugins = {
   {
     "mrjones2014/nvim-ts-rainbow",
   },
-  {
-    "romgrk/nvim-treesitter-context",
-    config = function()
-      require("treesitter-context").setup({
-        enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-        throttle = true, -- Throttles plugin updates (may improve performance)
-        max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-        patterns = {
-          -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
-          -- For all filetypes
-          -- Note that setting an entry here replaces all other patterns for this entry.
-          -- By setting the 'default' entry below, you can control which nodes you want to
-          -- appear in the context window
-          default = {
-            "class",
-            "function",
-            "method",
-          },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "romgrk/nvim-treesitter-context",
+  --   config = function()
+  --     require("treesitter-context").setup({
+  --       enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  --       throttle = true, -- Throttles plugin updates (may improve performance)
+  --       max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+  --       patterns = {
+  --         -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+  --         -- For all filetypes
+  --         -- Note that setting an entry here replaces all other patterns for this entry.
+  --         -- By setting the 'default' entry below, you can control which nodes you want to
+  --         -- appear in the context window
+  --         default = {
+  --           "class",
+  --           "function",
+  --           "method",
+  --         },
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "ahmedkhalf/lsp-rooter.nvim",
     event = "BufRead",
@@ -196,7 +200,7 @@ lvim.plugins = {
     "chipsenkbeil/distant.nvim",
     branch = "v0.3",
     config = function()
-      require("distant"):setup()
+      require("distant").setup()
     end,
   },
   {
@@ -207,6 +211,59 @@ lvim.plugins = {
   {
     "mechatroner/rainbow_csv",
   },
+  {
+    "sontungexpt/witch",
+    priority = 1000,
+    lazy = false,
+  },
+  {
+    "comfysage/evergarden",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("evergarden").setup({
+        transparent_background = true,
+        contrast_dark = "medium", -- 'hard'|'medium'|'soft'
+        overrides = {}, -- add custom overrides
+      })
+    end,
+  },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    -- Add in any other configuration;
+    --   event = foo,
+    --   config = bar
+    --   end,
+  },
+  {
+    url = "https://codeberg.org/jthvai/lavender.nvim",
+    branch = "stable", -- versioned tags + docs updates from main
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "maxmx03/fluoromachine.nvim",
+    config = function()
+      local fm = require("fluoromachine")
+
+      fm.setup({
+        glow = false,
+        theme = "fluoromachine",
+      })
+
+      -- vim.cmd.colorscheme("fluoromachine")
+    end,
+  },
+  {
+    "Mofiqul/dracula.nvim",
+    config = function()
+      require("dracula").setup({
+        italic_comment = true,
+      })
+    end,
+  },
+  { "Yazeed1s/oh-lucy.nvim" },
+  -- { dir = vim.env.HOME .. "/Sync/Assets/dracula-pro/themes/vim", name = "dracula-pro" },
 }
 
 ------------------------
@@ -215,8 +272,8 @@ lvim.plugins = {
 -- catppuccin-x, latte, frappe, macchiato, mocha
 -- see everforest insert for soft/medium/hard, adheres to light/dark setting below
 -- rose-pine, rose-pine-moon, rose-pine-dawn
-lvim.colorscheme = "rose-pine-dawn"
-vim.opt.background = "light"
+lvim.colorscheme = "everforest"
+vim.opt.background = "dark"
 vim.opt.relativenumber = true
 lvim.builtin.treesitter.rainbow.enable = true
 vim.opt.relativenumber = true

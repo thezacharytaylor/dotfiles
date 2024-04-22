@@ -276,7 +276,6 @@ lvim.colorscheme = "everforest"
 vim.opt.background = "dark"
 vim.opt.relativenumber = true
 lvim.builtin.treesitter.rainbow.enable = true
-vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.listchars = {

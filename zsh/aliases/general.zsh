@@ -8,7 +8,7 @@ alias_not_used () {
 }
 
 # Editors
-alias nvim="lvim"
+#alias nvim="lvim"
 alias vim="nvim"
 alias vs="codium"
 alias vsc="codium ."

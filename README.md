@@ -5,7 +5,7 @@ Need to clean this up a bit. 🤔️
 
 ## Notables
 
-- **Terminal**: Kitty
+- **Terminal**: Kitty (Though trying Warp)
 - **Terminal Theme**: Starship
 - **Font**: VictorMono Nerd Font
 - **Keyboard**: Colemak

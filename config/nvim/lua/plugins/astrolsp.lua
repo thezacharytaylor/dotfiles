@@ -39,6 +39,7 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      -- "blade",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -80,6 +81,9 @@ return {
           },
         },
       }, -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      phpactor = {
+        filetypes = { "php", "blade" },
+      },
     },
     -- customize how language servers are attached
     handlers = {
@@ -89,18 +93,140 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      -- phpactor
+      phpactor = function(_, opts)
+        require("lspconfig").phpactor.setup {
+          -- capabilities = capabilities,
+          -- on_attach = function(client, bufnr)
+          --   client.server_capabilities.completionProvider = false
+          --   client.server_capabilities.hoverProvider = false
+          --   client.server_capabilities.implementationProvider = false
+          --   client.server_capabilities.referencesProvider = false
+          --   client.server_capabilities.renameProvider = false
+          --   client.server_capabilities.selectionRangeProvider = false
+          --   client.server_capabilities.signatureHelpProvider = false
+          --   client.server_capabilities.typeDefinitionProvider = false
+          --   client.server_capabilities.workspaceSymbolProvider = false
+          --   client.server_capabilities.definitionProvider = false
+          --   client.server_capabilities.documentHighlightProvider = false
+          --   client.server_capabilities.documentSymbolProvider = false
+          --   client.server_capabilities.documentFormattingProvider = false
+          --   client.server_capabilities.documentRangeFormattingProvider = false
+          -- end,
+          init_options = {
+            ["language_server_phpstan.enabled"] = false,
+            ["language_server_psalm.enabled"] = false,
+          },
+          handlers = {
+            ["textDocument/publishDiagnostics"] = function() end,
+          },
+        }
+      end,
+      -- blade = function(_, opts)
+      --   require("lspconfig").blade.setup {
+      --     cmd = { "/Users/zacharytaylor/Documents/laravel-dev-tools", "lsp" },
+      --     -- filetypes = { "blade" },
+      --   }
+      -- end,
+      -- phpactor = function()
+      --   require("lspconfig").phpactor.setup {
+      --     filetypes = { "php", "blade" },
+      --   }
+      -- end,
+      -- blade
+      -- blade = function()
+      --   require("lspconfig").blade.setup {
+      --     cmd = { "~/Documents/laravel-dev-tools", "lsp" },
+      --     filetypes = { "blade" },
+      --   }
+      -- end,
       -- intelphense for future reference
       -- intelephense = function()
-      --   require("lspconfig").intelephense.setup({
+      --   require("lspconfig").intelephense.setup {
       --     settings = {
       --       intelephense = {
       --         stubs = {
-      --           -- STUBS HERE!
+      --           "apache",
+      --           "bcmath",
+      --           "bz2",
+      --           "calendar",
+      --           "com_dotnet",
+      --           "Core",
+      --           "ctype",
+      --           "curl",
+      --           "date",
+      --           "dba",
+      --           "dom",
+      --           "enchant",
+      --           "exif",
+      --           "FFI",
+      --           "fileinfo",
+      --           "filter",
+      --           "fpm",
+      --           "ftp",
+      --           "gd",
+      --           "gettext",
+      --           "gmp",
+      --           "hash",
+      --           "iconv",
+      --           "imap",
+      --           "intl",
+      --           "json",
+      --           "ldap",
+      --           "libxml",
+      --           "mbstring",
+      --           "meta",
+      --           "mysqli",
+      --           "oci8",
+      --           "odbc",
+      --           "openssl",
+      --           "pcntl",
+      --           "pcre",
+      --           "PDO",
+      --           "pdo_ibm",
+      --           "pdo_mysql",
+      --           "pdo_pgsql",
+      --           "pdo_sqlite",
+      --           "pgsql",
+      --           "Phar",
+      --           "posix",
+      --           "pspell",
+      --           "readline",
+      --           "Reflection",
+      --           "session",
+      --           "shmop",
+      --           "SimpleXML",
+      --           "snmp",
+      --           "soap",
+      --           "sockets",
+      --           "sodium",
+      --           "SPL",
+      --           "sqlite3",
+      --           "standard",
+      --           "superglobals",
+      --           "sysvmsg",
+      --           "sysvsem",
+      --           "sysvshm",
+      --           "tidy",
+      --           "tokenizer",
+      --           "xml",
+      --           "xmlreader",
+      --           "xmlrpc",
+      --           "xmlwriter",
+      --           "xsl",
+      --           "Zend OPcache",
+      --           "zip",
+      --           "zlib",
+      --           "wordpress",
+      --           "woocommerce",
+      --           "wordpress-globals",
+      --           "wp-cli",
+      --           "acf-pro",
       --         },
       --         -- ...
       --       },
       --     },
-      --   })
+      --   }
       -- end,
     },
     -- Configure buffer local auto commands to add when attaching a language server

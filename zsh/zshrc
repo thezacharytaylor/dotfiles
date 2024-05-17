@@ -96,7 +96,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/php@8.2/include"
 export PATH=$PATH:$NVM_DIR/versions/node/node_modules/.bin
 
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
-export PATH="~/.local/bin/lvim:$PATH"
 
 export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
 

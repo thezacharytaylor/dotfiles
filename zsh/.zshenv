@@ -10,8 +10,8 @@ export XDG_LIB_HOME="${HOME}/.local/lib"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
 # Set default applications
-export EDITOR="lvim"
-export VISUAL="lvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export GIT_EDITOR=vim
 export TERMINAL="kitty"
 export BROWSER="arc"
@@ -22,7 +22,7 @@ export BROWSER="arc"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='lvim'
+  export EDITOR='nvim'
 fi
 
 ## Respect XDG directories

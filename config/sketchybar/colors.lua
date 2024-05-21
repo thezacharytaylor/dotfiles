@@ -1,4 +1,4 @@
--- Rose Pine Dawn colors
+-- Carbonfox colors
 local carbonfox = {
   black = 0xff282828,
   white = 0xffdfdfe0,
@@ -30,6 +30,39 @@ local carbonfox = {
   end,
 }
 
+-- Catppuccin Macchiato colors
+local catppuccin_macchiato = {
+  black = 0xff24273a,
+  white = 0xffcad3f5,
+  red = 0xffed8796,
+  green = 0xffa5da95,
+  blue = 0xff8aadf4,
+  yellow = 0xffeed49f,
+  orange = 0xfff5a97e,
+  magenta = 0xffb7bdf8,
+  grey = 0xff6e738d,
+  transparent = 0x00000000,
+
+  bar = {
+    bg = 0xff24273A,
+    border = 0xff6e038d,
+  },
+  popup = {
+    bg = 0xff1d2030,
+    border = 0xffffb7bdf8,
+  },
+  bg1 = 0xff24273a,
+  bg2 = 0xff171825,
+
+  with_alpha = function(color, alpha)
+    if alpha > 1.0 or alpha < 0.0 then
+      return color
+    end
+    return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+  end,
+}
+
+-- Rose pine colors
 local rose_pine = {
   black = 0xff191724,
   white = 0xffe0def4,
@@ -92,4 +125,4 @@ local rose_pine_dawn = {
   end,
 }
 
-return rose_pine
+return catppuccin_macchiato

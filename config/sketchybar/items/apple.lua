@@ -14,8 +14,8 @@ local apple = sbar.add("item", {
   },
   label = { drawing = false },
   background = {
-    color = colors.bg2,
-    border_color = colors.black,
+    color = colors.bg1,
+    border_color = colors.grey,
     border_width = 1,
   },
   padding_left = 1,

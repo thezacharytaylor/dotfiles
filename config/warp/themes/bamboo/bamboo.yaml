@@ -1,0 +1,23 @@
+background: "#252623" # bg0
+accent: "#f08080" # coral
+foreground: "#f1e9d2" # fg
+details: darker
+terminal_colors:
+  normal:
+    black: "#f1e9d2"
+    red: "#e75a7c"
+    green: "#8fb573"
+    yellow: "#dbb651"
+    blue: "#57a5e5"
+    magenta: "#aaaaff" # purple
+    cyan: "#70c2be"
+    white: "#838781" # light grey
+  bright:
+    black: "#575656" # ???
+    red: "#e75a7c"
+    green: "#8fb573"
+    yellow: "#dbb651"
+    blue: "#57a5e5"
+    magenta: "#aaaaff"
+    cyan: "#70c2be"
+    white: "#5b5e5a" # grey

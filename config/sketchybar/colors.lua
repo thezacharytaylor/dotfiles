@@ -62,6 +62,38 @@ local catppuccin_macchiato = {
   end,
 }
 
+-- Catppuccin Mocha colors
+local catppuccin_mocha = {
+  black = 0xff1e1e2e,
+  white = 0xffcdd6f4,
+  red = 0xfff38ba8,
+  green = 0xffa6e3a1,
+  blue = 0xff89dceb,
+  yellow = 0xfff9e2af,
+  orange = 0xfffab387,
+  magenta = 0xffb4befe,
+  grey = 0xff6c7086,
+  transparent = 0x00000000,
+
+  bar = {
+    bg = 0xff1e1e2e,
+    border = 0xff6c7086,
+  },
+  popup = {
+    bg = 0xff181825,
+    border = 0xffb4befe,
+  },
+  bg1 = 0xff1e1e2e,
+  bg2 = 0xff181825,
+
+  with_alpha = function(color, alpha)
+    if alpha > 1.0 or alpha < 0.0 then
+      return color
+    end
+    return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+  end,
+}
+
 -- Rose pine colors
 local rose_pine = {
   black = 0xff191724,
@@ -125,4 +157,4 @@ local rose_pine_dawn = {
   end,
 }
 
-return catppuccin_macchiato
+return catppuccin_mocha

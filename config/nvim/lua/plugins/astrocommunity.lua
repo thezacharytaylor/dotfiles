@@ -14,7 +14,7 @@ return {
   { import = "astrocommunity.colorscheme.cyberdream-nvim" },
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.colorscheme.everforest" },
-  { import = "astrocommunity.colorscheme.fluoromachine-nvim" },
+  -- { import = "astrocommunity.colorscheme.fluoromachine-nvim" },
   { import = "astrocommunity.colorscheme.helix-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.colorscheme.night-owl-nvim" },

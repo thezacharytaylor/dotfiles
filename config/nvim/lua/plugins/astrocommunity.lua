@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.php" },
   -- { import = "astrocommunity.pack.blade" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
+  -- Themes
   { import = "astrocommunity.colorscheme.bamboo-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.cyberdream-nvim" },
@@ -23,6 +24,7 @@ return {
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
-  { import = "astrocommunity.motion.hop-nvim" },
-  { import = "astrocommunity.workflow.hardtime-nvim" },
+  { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
+  { import = "astrocommunity.motion.hop-nvim" }, -- Better navigation
+  { import = "astrocommunity.workflow.hardtime-nvim" }, -- force better practices
 }

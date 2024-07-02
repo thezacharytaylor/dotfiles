@@ -12,7 +12,7 @@ vim.opt.smartindent = true
 vim.opt.spell = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.wrap = false
+-- vim.opt.wrap = false
 vim.opt.breakindent = true -- maintain indent when wrapping indented lines
 vim.opt.linebreak = true -- wrap at word boundaries
 vim.opt.list = true -- enable the below listchars
@@ -24,6 +24,9 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.completeopt = "menuone,longest,preview"
 vim.opt.showmode = false
+vim.opt.updatetime = 250 -- Decrease update time
+vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
+vim.opt.titlestring = "%f // nvim"
 
 -- Set up custom filetypes
 vim.filetype.add {

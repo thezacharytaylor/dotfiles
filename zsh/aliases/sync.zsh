@@ -22,3 +22,16 @@ kinsync() {
     echo "Invalid mode"
   fi
 }
+
+# wpcsync mode source destination
+# wpcrync --dev abc-abccompany-com/public .
+# wpcsync abc:~/public_html .
+wpcsync() {
+  if [[ $1 = '--dev' ]]; then
+    echo "Attempting to get wp-config.php from dev server."
+    rsync -vzP kin-dev:~/webapps/$2/wp-config.php $3
+  else
+    echo "Attempting to get wp-config.php from requested server."
+    rsync -vzP $2/wp-config.php $3
+  fi
+}

@@ -346,7 +346,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "intelephense",
   "cssls",
   "tsserver",
-  "tailwindcss",
   "rust_analyzer",
 }
 

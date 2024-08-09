@@ -157,4 +157,4 @@ local rose_pine_dawn = {
   end,
 }
 
-return catppuccin_mocha
+return rose_pine_dawn

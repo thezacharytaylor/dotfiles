@@ -26,5 +26,6 @@ return {
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
   { import = "astrocommunity.motion.hop-nvim" }, -- Better navigation
+  { import = "astrocommunity.motion.nvim-surround" }, -- Wrapping words w/ '"[{( support
   { import = "astrocommunity.workflow.hardtime-nvim" }, -- force better practices
 }

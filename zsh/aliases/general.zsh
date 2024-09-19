@@ -220,7 +220,7 @@ alias gtfo='exit'
 
 # Bringing it all together
 # Brew update, composer global update, check Kinetic SSH config, start tmux
-alias letsrockbaby='( bubu; cgu; valet restart; kinssh; )' # ts werk;
+alias letsrockbaby='( echo "Running homebrew updates"; bubu; echo "Running composer updates"; ecgu; echo "Restarting valet"; valet restart; echo "Fetching Kinetic ssh keys"; kinssh; )' # ts werk;
 alias magic='( tmux new -s magic; run "echo hello"; )'
 alias blessedbe='( two; )' #tksv;
 

@@ -51,12 +51,20 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/aliases/general.zsh
   source ${zsh_dir}/aliases/git.zsh
   source ${zsh_dir}/aliases/node.zsh
-  source ${zsh_dir}/aliases/alias-tips.zsh
-  source ${zsh_dir}/aliases/timewarrior.zsh
   source ${zsh_dir}/aliases/sync.zsh
   source ${zsh_dir}/aliases/wordpress.zsh
+
+  # Import Laravel specific aliases/functions
+  source ${zsh_dir}/aliases/laravel.zsh
+
+  # Import Kinetic specific aliases/functions
+  source ${zsh_dir}/aliases/kinetic.zsh
   source ~/Repos/kin-alfred-workflows/zsh-scripts/wordpress.zsh
   source ~/Repos/kin-alfred-workflows/zsh-scripts/wordpress-env.zsh
+
+  # Miscellaneous
+  source ${zsh_dir}/aliases/timewarrior.zsh
+  source ${zsh_dir}/aliases/alias-tips.zsh
 
   # Setup Antigen, and import plugins
   # source ${zsh_dir}/helpers/setup-antigen.zsh
@@ -107,10 +115,10 @@ export NNN_OPTS="H" # 'H' shows the hidden files. Same as option -H (so 'nnn -de
 # export NNN_OPTS="deH" # if you prefer to have all the options at the same place
 export LC_COLLATE="C" # hidden files on top
 export NNN_FIFO="/tmp/nnn.fifo" # temporary buffer for the previews
-export NNN_TERMINAL="terminal"
+# export NNN_TERMINAL="terminal"
 export NNN_BMS="d:$HOME/Documents;h:$HOME/;D:$HOME/Downloads/;k:$HOME/Kinetic/;K:$HOME/KineticDocs/;r:$HOME/Repos/;c:$HOME/Repos/dotfiles/;S:$HOME/Sync/;s:$HOME/Pictures/screenshots/;w:$HOME/Sync/Images/WallPapers/"
 # export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999" # feel free to change the colors
-export NNN_PLUG='p:preview-tui;c:cbcopy;v:cbpaste' # many other plugins are available here: https://github.com/jarun/nnn/tree/master/plugins
+export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;v:imgview;p:preview-tui' # many other plugins are available here: https://github.com/jarun/nnn/tree/master/plugins
 export SPLIT='v' # to split Kitty vertically
 # This second option relies on you're terminal using the catppuccin theme and well use true catppuccin colors:
 BLK="03" CHR="03" DIR="04" EXE="02" REG="07" HARDLINK="05" SYMLINK="05" MISSING="08" ORPHAN="01" FIFO="06" SOCK="03" UNKNOWN="01"
@@ -138,6 +146,15 @@ n () # to cd on quit
 # Tmux stuff
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_UNICODE=true
+
+# function yz() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		builtin cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 
 #--------------------------------------------------------------------------
 # Miscellaneous

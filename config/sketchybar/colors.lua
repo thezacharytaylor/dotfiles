@@ -126,6 +126,7 @@ local rose_pine = {
   end,
 }
 
+-- Rose pine dawn colors
 local rose_pine_dawn = {
   black = 0xfff4ede8,
   white = 0xff575279,
@@ -157,4 +158,66 @@ local rose_pine_dawn = {
   end,
 }
 
-return rose_pine_dawn
+local hang_in_there = {
+  black = 0xfff8edf7,
+  white = 0xffb99bd4,
+  red = 0xfff7bfd5,
+  green = 0xffb8e6c3,
+  blue = 0xffd9f2f5,
+  yellow = 0xfffbf9ab,
+  orange = 0xfffaba8b,
+  magenta = 0xffd7c6e6,
+  grey = 0xffbfbddd,
+  transparent = 0x00000000,
+
+  bar = {
+    bg = 0xfffaf4ed,
+    border = 0xfffaba8b,
+  },
+  popup = {
+    bg = 0xfff2e9e1,
+    border = 0xfffafba8b,
+  },
+  bg1 = 0xfffffaf3,
+  bg2 = 0xfff8edf7,
+
+  with_alpha = function(color, alpha)
+    if alpha > 1.0 or alpha < 0.0 then
+      return color
+    end
+    return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+  end,
+}
+
+local pokemon_ghost = {
+  black = 0xff463A5A,
+  white = 0xffF7F5F7,
+  red = 0xffFF857F,
+  green = 0xffC2FFDF,
+  blue = 0xff1BC5E0,
+  yellow = 0xffFFF352,
+  orange = 0xff928B72,
+  magenta = 0xffCEB1FF,
+  grey = 0xffbfbddd,
+  transparent = 0x00000000,
+
+  bar = {
+    bg = 0xff625778,
+    border = 0xff807F8A,
+  },
+  popup = {
+    bg = 0xff8b7292,
+    border = 0xff807f8a,
+  },
+  bg1 = 0xff8b7292,
+  bg2 = 0xff625778,
+
+  with_alpha = function(color, alpha)
+    if alpha > 1.0 or alpha < 0.0 then
+      return color
+    end
+    return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+  end,
+}
+
+return pokemon_ghost

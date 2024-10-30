@@ -33,7 +33,7 @@ sbar.default({
     image = {
       corner_radius = 9,
       border_color = colors.magenta,
-      border_width = 1,
+      border_width = 2,
     },
   },
   popup = {

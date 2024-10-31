@@ -12,6 +12,10 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
+      -- Set up diagnostics
+      null_ls.builtins.diagnostics.editorconfig_checker,
+      null_ls.builtins.diagnostics.markdownlint,
+      null_ls.builtins.diagnostics.selene,
       -- Set a formatter
       null_ls.builtins.formatting.prettierd.with {
         filetypes = {
@@ -23,7 +27,6 @@ return {
           "postcss",
           "scss",
           "json",
-          "yaml",
           "html",
           "markdown",
           "vue",
@@ -42,8 +45,9 @@ return {
           "--wrapAttributes=force-expand-multiline",
         },
       },
-      -- null_ls.builtins.formatting.stylua,
-      -- null_ls.builtins.formatting.prettier,
+      null_ls.builtins.formatting.stylua,
+      null_ls.builtins.formatting.markdownlint,
+      null_ls.builtins.formatting.yamlfmt,
     })
   end,
 }

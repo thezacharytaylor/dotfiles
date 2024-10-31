@@ -11,8 +11,17 @@ return {
     opts = {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       ensure_installed = {
+        "bashls",
+        "html",
+        "jsonls",
         "lua_ls",
-        "blade",
+        "markdown_oxide",
+        "phpactor",
+        "theme_check",
+        "stylelint_lsp",
+        "tailwindcss",
+        "ts_ls",
+        "vuels",
         -- add more arguments for adding more language servers
       },
     },
@@ -24,8 +33,18 @@ return {
     opts = {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       ensure_installed = {
-        "prettier",
+        "blade-formatter",
+        "editorconfig-checker",
+        "htmlhint",
+        "jsonlint",
+        "markdownlint",
+        "php-cs-fixer",
+        "prettierd",
+        "selene",
         "stylua",
+        "ts-standard",
+        "xmlformatter",
+        "yamlfmt",
         -- add more arguments for adding more null-ls sources
       },
     },
@@ -36,7 +55,7 @@ return {
     opts = {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       ensure_installed = {
-        "python",
+        "php-debug-adapter",
         -- add more arguments for adding more debuggers
       },
     },

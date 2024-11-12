@@ -1,0 +1,51 @@
+snippet pubf "public method"
+	public function ${1}(${2}): $3
+	{
+		${0}
+	}
+
+snippet prof "protected method"
+	protected function ${1}(${2}): $3
+	{
+		${0}
+	}
+
+snippet prif "private method"
+	protected function ${1}(${2}): $3
+	{
+		${0}
+	}
+
+snippet testt "test method (prefix)"
+	public function test_${1}()
+	{
+		${0}
+	}
+
+snippet testa "test method (annotation)"
+	/** @test */
+	public function ${1}()
+	{
+		${0}
+	}
+
+snippet wplog "wordpress write to debug log"
+	function write_log(mixed \$log): void
+	{
+    	if (true === WP_DEBUG) {
+        	if (is_array(\$log) || is_object(\$log)) {
+            	error_log(print_r(\$log, true));
+        	} else {
+            	error_log(\$log);
+        	}
+    	}
+	}
+
+snippet scriptenq "enqueue wordpress script"
+	/** use get_stylesheet_directory_uri for child themes */
+	wp_enqueue_script('${1}', get_template_directory_uri() . '/${2}.js', array(${3}), ${4}, '${5}');
+
+snippet styleenq "enqueue wordpress style"
+	/** use get_stylesheet_directory_uri for child themes */
+	wp_enqueue_style('${1}', get_template_directory_uri() . '/${2}.css', array(${3}), ${4}, '${5}');
+	

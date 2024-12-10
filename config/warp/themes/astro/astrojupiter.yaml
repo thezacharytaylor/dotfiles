@@ -1,0 +1,24 @@
+name: astrojupiter
+accent: "#D04F4E"
+background: "#FEEEEE"
+foreground: "#815654"
+details: lighter
+terminal_colors:
+  normal:
+    black: "#FEEEEE"
+    red: "#A13F37"
+    green: "#467118"
+    yellow: "#805C00"
+    blue: "#0090A2"
+    magenta: "#90437A"
+    cyan: "#007652"
+    white: "#815654"
+  bright:
+    black: "#FEEEEE"
+    red: "#A13F37"
+    green: "#467118"
+    yellow: "#805C00"
+    blue: "#0090A2"
+    magenta: "#90437A"
+    cyan: "#007652"
+    white: "#815654"

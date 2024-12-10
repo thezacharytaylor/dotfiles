@@ -16,16 +16,20 @@ return {
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.colorscheme.everforest" },
   -- { import = "astrocommunity.colorscheme.fluoromachine-nvim" },
+  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
   { import = "astrocommunity.colorscheme.helix-nvim" },
+  { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.colorscheme.night-owl-nvim" },
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.sonokai" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
   { import = "astrocommunity.motion.hop-nvim" }, -- Better navigation
   { import = "astrocommunity.motion.nvim-surround" }, -- Wrapping words w/ '"[{( support
+  { import = "astrocommunity.scrolling.neoscroll-nvim" },
+  { import = "astrocommunity.search.nvim-spectre" },
+  { import = "astrocommunity.test.vim-test" },
   { import = "astrocommunity.workflow.hardtime-nvim" }, -- force better practices
 }

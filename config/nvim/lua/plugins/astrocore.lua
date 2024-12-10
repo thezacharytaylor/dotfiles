@@ -62,6 +62,15 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        -- Colemak Keymap Swap
+        -- k = { "i", desc = "Insert mode" },
+        -- K = { "I", desc = "Insert mode" },
+        -- j = { "e", desc = "Last character of current object" },
+        -- l = { "u", desc = "Undo" },
+        -- u = { "k", desc = "Cursor up" },
+        -- i = { "l", desc = "Cursor right" },
+        -- e = { "j", desc = "Cursor down" },
+        -- n = { "h", desc = "Cursor left" },
       },
       t = {
         -- setting a mapping to false will disable it
@@ -69,4 +78,32 @@ return {
       },
     },
   },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   opts = {
+  --     defaults = {
+  --       mappings = {
+  --         n = {
+  --           ["e"] = "noop",
+  --           ["u"] = "noop",
+  --           ["l"] = "noop",
+  --           ["k"] = "noop",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   opts = {
+  --     mappings = {
+  --       n = {
+  --         ["e"] = "noop",
+  --         ["u"] = "noop",
+  --         ["l"] = "noop",
+  --         ["k"] = "noop",
+  --       },
+  --     },
+  --   },
+  -- },
 }

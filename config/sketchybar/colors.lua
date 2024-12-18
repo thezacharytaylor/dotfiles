@@ -220,4 +220,4 @@ local pokemon_ghost = {
   end,
 }
 
-return catppuccin_macchiato
+return catppuccin_mocha

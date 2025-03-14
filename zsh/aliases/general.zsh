@@ -31,6 +31,7 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias ls="eza -lag --header"
 alias eza="/opt/homebrew/bin/eza"
+alias rsync="rsync -vzP"
 
 # Misc
 alias lg="lazygit"
@@ -221,7 +222,7 @@ alias gtfo='exit'
 # Bringing it all together
 # Brew update, composer global update, check Kinetic SSH config, start tmux
 alias yabaiboot='( echo "Loading Yabai Script Component..."; echo "Please enter your password."; sudo yabai --load-sa; echo "Thank you for choosing Yabai and remember: The universe is not nice. So stay near me. I am a bit nicer." )'
-alias letsrockbaby='( echo "Running homebrew updates"; bubu; echo "Running composer updates"; ecgu; echo "Restarting valet"; valet restart; echo "Fetching Kinetic ssh keys"; kinssh; )' # ts werk;
+alias letsrockbaby='( echo "Running homebrew updates"; bubu; echo "Running composer updates"; cgu; echo "Restarting valet"; valet restart; echo "Fetching Kinetic ssh keys"; kinssh; )' # ts werk;
 alias magic='( tmux new -s magic; run "echo hello"; )'
 alias blessedbe='( two; )' #tksv;
 

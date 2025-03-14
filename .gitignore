@@ -3,3 +3,4 @@ git/gitconfig
 git/gitconfig
 config/sketchybar/helper/helper
 config/nvim/colors/dracula_pro
+zsh/keys.zsh

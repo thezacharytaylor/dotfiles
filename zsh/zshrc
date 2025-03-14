@@ -61,6 +61,9 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/aliases/kinetic.zsh
   source ~/Repos/kin-alfred-workflows/zsh-scripts/wordpress.zsh
   source ~/Repos/kin-alfred-workflows/zsh-scripts/wordpress-env.zsh
+  source ~/Repos/kin-alfred-workflows/zsh-scripts/kinetic-aliases.zsh
+  # source ~/Repos/kin-alfred-workflows/zsh-scripts/useful-aliases.zsh
+  # source ~/Repos/kin-alfred-workflows/zsh-scripts/helpers.zsh
 
   # Miscellaneous
   source ${zsh_dir}/aliases/timewarrior.zsh
@@ -78,6 +81,9 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/lib/surround.zsh
   # source ${zsh_dir}/lib/completion.zsh
   # source ${zsh_dir}/lib/expansions.zsh
+
+  # Import API Keys
+  source ${zsh_dir}/keys.zsh
 fi
 
 #--------------------------------------------------------------------------

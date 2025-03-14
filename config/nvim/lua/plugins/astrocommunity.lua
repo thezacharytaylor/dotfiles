@@ -23,11 +23,13 @@ return {
   { import = "astrocommunity.colorscheme.night-owl-nvim" },
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.sonokai" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
   { import = "astrocommunity.motion.hop-nvim" }, -- Better navigation
   { import = "astrocommunity.motion.nvim-surround" }, -- Wrapping words w/ '"[{( support
+  { import = "astrocommunity.recipes.ai" },
+  -- { import = "astrocommunity.ai.kurama622-llm-nvim" },
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.test.vim-test" },

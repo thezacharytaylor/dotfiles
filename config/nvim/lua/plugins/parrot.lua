@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 return {
   "frankroeder/parrot.nvim",
   dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
@@ -6,23 +8,23 @@ return {
       mistral = {
         api_key = os.getenv "MISTRAL_API_KEY",
         endpoint = "https://api.mistral.ai/v1/chat/completions",
-        topic_prompt = "You only respond with 3 to 4 words to summarize the past conversation.",
-        topic = {
-          model = "codestral-latest",
-          params = { max_tokens = 32 },
-        },
-        -- default parameters for the actual model
-        params = {
-          chat = { max_tokens = 4096 },
-          command = { max_tokens = 4096 },
-        },
+        -- topic_prompt = "You only respond with 3 to 4 words to summarize the past conversation.",
+        -- topic = {
+        --   model = "codestral-latest",
+        --   params = { max_tokens = 32 },
+        -- },
+        -- -- default parameters for the actual model
+        -- params = {
+        --   chat = { max_tokens = 4096 },
+        --   command = { max_tokens = 4096 },
+        -- },
       },
       anthropic = {
-        api_key = os.getenv "CLAUDE_API_KEY",
+        api_key = os.getenv "ANTHROPIC_API_KEY",
         endpoint = "https://api.anthropic.com/v1/messages",
         topic_prompt = "You only respond with 3 to 4 words to summarize the past conversation.",
         topic = {
-          model = "claude-3-7-sonnet-20250219",
+          model = "claude-3-5-sonnet-20251022",
           params = { max_tokens = 32 },
         },
         -- default parameters for the actual model
@@ -81,5 +83,24 @@ return {
     { "<Leader>an", "<cmd>PrtModel<cr>", mode = { "n" }, desc = "Select model" },
     { "<Leader>ap", "<cmd>PrtProvider<cr>", mode = { "n" }, desc = "Select provider" },
     { "<Leader>aq", "<cmd>PrtAsk<cr>", mode = { "n" }, desc = "Ask a question" },
+  },
+  specs = {
+    {
+      "AstroNvim/astrocore",
+      opts = {
+        options = {
+          g = {
+            -- set the ai_accept function
+            ai_accept = function()
+              local suggestion = require "parrot.completion"
+              -- if suggestion.is_available() then
+              --   vim.schedule(function() suggestion.complete() end)
+              --   return true
+              -- end
+            end,
+          },
+        },
+      },
+    },
   },
 }

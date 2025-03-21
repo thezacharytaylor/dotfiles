@@ -7,11 +7,14 @@ return {
   config = function()
     require("codecompanion").setup {
       strategies = {
+        cmd = {
+          adapter = "codestral",
+        },
         chat = {
-          adapter = "mistral",
+          adapter = "codestral",
         },
         inline = {
-          adapter = "mistral",
+          adapter = "codestral",
           keymaps = {
             accept_change = {
               modes = { n = "ga" },
@@ -28,7 +31,7 @@ return {
         stream = true,
       },
       adapters = {
-        mistral = function()
+        codestal = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
             name = "codestral",
             env = {
@@ -51,6 +54,23 @@ return {
               temperature = {
                 default = 0.2,
                 mapping = "parameters", -- not supported in default parameters.options
+              },
+            },
+          })
+        end,
+        mistral = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              api_key = "MISTRAL_API_KEY",
+            },
+            schema = {
+              model = {
+                default = "mistral-large-latest",
+              },
+              choices = {
+                "mistral-large-latest",
+                "mistral-medium-latest",
+                "mistral-small-latest",
               },
             },
           })

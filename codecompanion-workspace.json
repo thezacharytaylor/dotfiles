@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "name": "macOS Dotfiles",
+    "version": "1.0.0",
+    "system_prompt": "You are an expert in macOS dotfiles configuration. Help me understand and manage my dotfiles setup.",
+    "vars": {
+        "dotfiles_root": "~/Repos/dotfiles"
+    },
+    "groups": [
+        {
+            "name": "Shell Configuration",
+            "system_prompt": "You are an expert in Zsh configuration. Help me understand and manage my Zsh setup.",
+            "data": [
+                "zsh_config"
+            ]
+        },
+        {
+            "name": "Neovim Configuration",
+            "system_prompt": "You are an expert in Neovim configuration. Help me understand and manage my Neovim setup.",
+            "data": [
+                "nvim_config"
+            ]
+        },
+        {
+            "name": "General Configuration",
+            "system_prompt": "You are an expert in general macOS configuration. Help me understand and manage my general configuration files.",
+            "data": [
+                "general_config"
+            ]
+        }
+    ],
+    "data": {
+        "zsh_config": {
+            "type": "file",
+            "path": "${dotfiles_root}/zsh",
+            "description": "All files in the zsh directory for Zsh configuration."
+        },
+        "nvim_config": {
+            "type": "file",
+            "path": "${dotfiles_root}/config/nvim",
+            "description": "All files in the config/nvim directory for Neovim configuration."
+        },
+        "general_config": {
+            "type": "file",
+            "path": "${dotfiles_root}",
+            "description": "All files in the root dotfiles directory for general configuration."
+        }
+    }
+}

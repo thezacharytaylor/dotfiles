@@ -31,7 +31,7 @@ return {
         stream = true,
       },
       adapters = {
-        codestal = function()
+        codestral = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
             name = "codestral",
             env = {
@@ -61,7 +61,17 @@ return {
         mistral = function()
           return require("codecompanion.adapters").extend("openai_compatible", {
             env = {
+              url = "https://api.mistral.ai",
               api_key = "MISTRAL_API_KEY",
+              chat_url = "/v1/chat/completions",
+            },
+            handlers = {
+              form_parameters = function(self, params, messages)
+                -- codestral doesn't support these in the body
+                params.stream_options = nil
+                params.options = nil
+                return params
+              end,
             },
             schema = {
               model = {

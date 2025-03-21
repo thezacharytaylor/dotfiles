@@ -83,6 +83,10 @@ return {
       }, -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       phpactor = {
         filetypes = { "php", "blade" },
+        init_options = {
+          ["language_server_phpstan.enabled"] = true,
+          ["language_server_php_cs_fixer.enabled"] = true,
+        },
       },
     },
     -- customize how language servers are attached

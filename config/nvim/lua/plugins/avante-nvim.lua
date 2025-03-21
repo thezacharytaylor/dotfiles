@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 local prefix = "<Leader>a"
 return {
   "yetone/avante.nvim",
@@ -22,13 +24,13 @@ return {
   },
   opts = {
     provider = "mistral_code",
-    claude = {
-      api_key_name = "ANTHROPIC_API_KEY",
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-5-sonnet-20240620",
-      temperature = 0,
-      max_tokens = 4096,
-    },
+    -- claude = {
+    --   api_key_name = "ANTHROPIC_API_KEY",
+    --   endpoint = "https://api.anthropic.com",
+    --   model = "claude-3-5-sonnet-20240620",
+    --   temperature = 0,
+    --   max_tokens = 4096,
+    -- },
     vendors = {
       mistral_code = {
         api_key_name = "MISTRAL_API_KEY",
@@ -39,7 +41,7 @@ return {
       mistral = {
         api_key_name = "MISTRAL_API_KEY",
         endpoint = "https://api.mistral.ai/v1/",
-        model = "mistral-large-latest",
+        model = "mistral-medium-latest",
         __inherited_from = "openai",
       },
     },

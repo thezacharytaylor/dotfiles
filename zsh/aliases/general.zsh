@@ -93,10 +93,10 @@ ls-archive () {
 alias lz='ls-archive'
 
 # Make directory, and cd into it
-mkcd() {
-  local dir="$*";
-  mkdir -p "$dir" && cd "$dir";
-}
+# mkcd() {
+#   local dir="$*";
+#   mkdir -p "$dir" && cd "$dir";
+# }
 
 # Make dir and copy
 mkcp() {

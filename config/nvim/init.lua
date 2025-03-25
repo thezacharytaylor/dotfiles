@@ -18,3 +18,4 @@ end
 require "lazy_setup"
 require "polish"
 require "keymap"
+require "colemak_keymap"

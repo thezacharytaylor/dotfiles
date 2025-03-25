@@ -1,18 +1,10 @@
 #!/usr/bin/env sh
 
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Unload the macOS WindowManager process
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
-
-sudo yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
-yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
-yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
-yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
 $HOME/.config/yabai/create_spaces.sh
 
@@ -28,7 +20,7 @@ yabai -m config external_bar               all:40:0       \
                 normal_window_opacity      0.8            \
                 window_animation_duration  0.5            \
                 window_animation_easing    ease_out_quint \
-                insert_feedback_color      0xffa7c080   \
+                insert_feedback_color      0xff9dd274   \
                 split_ratio                0.50         \
                 auto_balance               off          \
                 mouse_modifier             fn           \

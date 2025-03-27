@@ -33,7 +33,7 @@ return {
   { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
   { import = "astrocommunity.motion.hop-nvim" }, -- Better navigation
   { import = "astrocommunity.motion.nvim-surround" }, -- Wrapping words w/ '"[{( support
-  -- { import = "astrocommunity.recipes.ai" },
+  { import = "astrocommunity.recipes.ai" }, -- AI Autocompletion?
   -- { import = "astrocommunity.ai.kurama622-llm-nvim" },
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },

@@ -29,7 +29,7 @@ vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 vim.opt.titlestring = "%f // nvim"
 
 -- Expand 'cc' into 'CodeCompanion' in the command line
-vim.cmd [[cab cc CodeCompanion]]
+-- vim.cmd [[cab cc CodeCompanion]]
 
 -- Set up custom filetypes
 vim.filetype.add {

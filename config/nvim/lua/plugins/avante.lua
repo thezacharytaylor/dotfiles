@@ -56,6 +56,9 @@ return {
       },
     },
     provider = "mistral_code", -- "mistral"
+    web_search_engine = {
+      provider = "kagi",
+    },
     cursor_applying_provider = "mistral_code",
     behaviour = {
       --- ... existing behaviours
@@ -72,7 +75,7 @@ return {
         -- timeout = 30000, -- Timeout in milliseconds
         -- temperature = 0,
         temperature = 0.7,
-        max_tokens = 8192,
+        max_tokens = 20000,
         stream = true,
         safe_prompt = false,
       },

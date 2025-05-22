@@ -76,6 +76,7 @@ return {
         -- temperature = 0,
         temperature = 0.7,
         max_tokens = 20000,
+        max_tokens = 60000,
         stream = true,
         safe_prompt = false,
       },
@@ -84,7 +85,10 @@ return {
         endpoint = "https://api.mistral.ai/v1/",
         model = "mistral-large-latest",
         __inherited_from = "openai",
-        max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+        temperature = 0.7,
+        max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway
+        stream = true,
+        safe_prompt = false,
       },
     },
   },

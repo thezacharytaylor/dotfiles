@@ -55,11 +55,11 @@ return {
         insert = "<CR>",
       },
     },
-    provider = "mistral_code", -- "mistral"
+    provider = "mistral", -- "mistral"
     web_search_engine = {
-      provider = "kagi",
+      provider = "searxng",
     },
-    cursor_applying_provider = "mistral_code",
+    cursor_applying_provider = "mistral",
     behaviour = {
       --- ... existing behaviours
       enable_cursor_planning_mode = true, -- enable cursor planning mode!
@@ -72,10 +72,9 @@ return {
         model = "codestral-latest",
         __inherited_from = "openai",
         -- max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
+        -- but the above doesn't work w/ Mistral models and breaks them
         -- timeout = 30000, -- Timeout in milliseconds
-        -- temperature = 0,
         temperature = 0.7,
-        max_tokens = 20000,
         max_tokens = 60000,
         stream = true,
         safe_prompt = false,
@@ -83,7 +82,7 @@ return {
       mistral = {
         api_key_name = "MISTRAL_API_KEY",
         endpoint = "https://api.mistral.ai/v1/",
-        model = "mistral-large-latest",
+        model = "codestral-latest", -- devstral-small-2505
         __inherited_from = "openai",
         temperature = 0.7,
         max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway

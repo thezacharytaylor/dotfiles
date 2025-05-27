@@ -13,19 +13,19 @@ return {
   -- { import = "astrocommunity.pack.blade" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
   -- Themes
-  { import = "astrocommunity.colorscheme.bamboo-nvim" },
+  -- { import = "astrocommunity.colorscheme.bamboo-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.colorscheme.cyberdream-nvim" },
+  -- { import = "astrocommunity.colorscheme.cyberdream-nvim" },
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.colorscheme.everforest" },
   -- { import = "astrocommunity.colorscheme.fluoromachine-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
-  { import = "astrocommunity.colorscheme.helix-nvim" },
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.colorscheme.night-owl-nvim" },
   { import = "astrocommunity.colorscheme.rose-pine" },
   { import = "astrocommunity.colorscheme.sonokai" },
+  -- Utilities
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.media.img-clip-nvim" },
   -- { import = "astrocommunity.completion.avante-nvim" },
@@ -37,6 +37,6 @@ return {
   -- { import = "astrocommunity.ai.kurama622-llm-nvim" },
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },
-  { import = "astrocommunity.test.vim-test" },
+  -- { import = "astrocommunity.test.vim-test" },
   { import = "astrocommunity.workflow.hardtime-nvim" }, -- force better practices
 }

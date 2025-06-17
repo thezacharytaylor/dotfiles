@@ -55,17 +55,25 @@ return {
         insert = "<CR>",
       },
     },
-    provider = "mistral", -- "mistral"
+    rag_service = {
+      enabled = false, -- Enables the RAG service
+      host_mount = os.getenv "HOME", -- Host mount path for the rag service
+      provider = "mistral_lg", -- The provider to use for RAG service (e.g. openai or ollama)
+      llm_model = "mistral-large-latest", -- The LLM model to use for RAG service
+      embed_model = "codestral-embed-2505", -- The embedding model to use for RAG service
+      endpoint = "https://api.mistral.ai/v1/", -- The API endpoint for RAG service
+    },
+    provider = "mistral_code", -- "mistral"
     web_search_engine = {
       provider = "searxng",
     },
-    cursor_applying_provider = "mistral",
+    cursor_applying_provider = "mistral_code",
     behaviour = {
       --- ... existing behaviours
       enable_cursor_planning_mode = true, -- enable cursor planning mode!
     },
     auto_suggestions_provider = "mistral_code",
-    vendors = {
+    providers = {
       mistral_code = {
         api_key_name = "CODESTRAL_API_KEY",
         endpoint = "https://codestral.mistral.ai/v1/",
@@ -74,20 +82,60 @@ return {
         -- max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway
         -- but the above doesn't work w/ Mistral models and breaks them
         -- timeout = 30000, -- Timeout in milliseconds
-        temperature = 0.7,
-        max_tokens = 60000,
-        stream = true,
-        safe_prompt = false,
+        extra_request_body = {
+          temperature = 0.7,
+          max_tokens = 60000,
+          stream = true,
+          safe_prompt = false,
+        },
+      },
+      mistral_dev = {
+        api_key_name = "MISTRAL_API_KEY",
+        endpoint = "https://api.mistral.ai/v1/",
+        model = "devstral-small-latest", -- devstral-small-2505
+        __inherited_from = "openai",
+        extra_request_body = {
+          temperature = 0.7,
+          max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway
+          stream = true,
+          safe_prompt = false,
+        },
+      },
+      mistral_chat = {
+        api_key_name = "MISTRAL_API_KEY",
+        endpoint = "https://api.mistral.ai/v1/",
+        model = "mistral-medium-latest", -- devstral-small-2505
+        __inherited_from = "openai",
+        extra_request_body = {
+          temperature = 0.7,
+          max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway
+          -- stream = true,
+          -- safe_prompt = false,
+        },
+      },
+      mistral_lg = {
+        api_key_name = "MISTRAL_API_KEY",
+        endpoint = "https://api.mistral.ai/v1/",
+        model = "mistral-large-latest", -- devstral-small-2505
+        __inherited_from = "openai",
+        extra_request_body = {
+          temperature = 0.7,
+          max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway
+          stream = true,
+          safe_prompt = false,
+        },
       },
       mistral = {
         api_key_name = "MISTRAL_API_KEY",
         endpoint = "https://api.mistral.ai/v1/",
         model = "codestral-latest", -- devstral-small-2505
         __inherited_from = "openai",
-        temperature = 0.7,
-        max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway
-        stream = true,
-        safe_prompt = false,
+        extra_request_body = {
+          temperature = 0.7,
+          max_tokens = 60000, -- remember to increase this value, otherwise it will stop generating halfway
+          stream = true,
+          safe_prompt = false,
+        },
       },
     },
   },

@@ -30,7 +30,7 @@ return {
   { import = "astrocommunity.media.img-clip-nvim" },
   -- { import = "astrocommunity.completion.avante-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
-  { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
+  -- { import = "astrocommunity.media.vim-wakatime" }, -- In IDE time tracking
   { import = "astrocommunity.motion.hop-nvim" }, -- Better navigation
   { import = "astrocommunity.motion.nvim-surround" }, -- Wrapping words w/ '"[{( support
   { import = "astrocommunity.recipes.ai" }, -- AI Autocompletion?

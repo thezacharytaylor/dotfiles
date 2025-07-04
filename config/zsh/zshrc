@@ -38,12 +38,10 @@ plugins=(brew chucknorris composer git hitchhiker macos tmux wp-cli yarn)
 
 source $ZSH/oh-my-zsh.sh
 
-function zvm_config() {
-  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-  ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
-}
-
-source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# function zvm_config() {
+#   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+#   ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+# }
 
 # Source all ZSH config files (if present)
 if [[ -d $zsh_dir ]]; then
@@ -84,7 +82,10 @@ fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # export PATH=$PATH:~/.composer/vendor/bin
 # export PATH=$HOME/.composer/vendor/bin:$HOME/bin:/usr/local/bin:$PATH
@@ -125,7 +126,7 @@ n () # to cd on quit
 }
 
 # Tmux stuff
-ZSH_TMUX_AUTOSTART=true
+# ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_UNICODE=true
 
 # function yz() {
@@ -152,4 +153,6 @@ export GPG_TTY=$(tty)
 eval "$(starship init zsh)"
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"

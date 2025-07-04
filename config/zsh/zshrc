@@ -57,14 +57,6 @@ if [[ -d $zsh_dir ]]; then
   # Import Laravel specific aliases/functions
   source ${zsh_dir}/aliases/laravel.zsh
 
-  # Import Kinetic specific aliases/functions
-  source ${zsh_dir}/aliases/kinetic.zsh
-  source ~/Repos/kin-alfred-workflows/zsh-scripts/wordpress.zsh
-  source ~/Repos/kin-alfred-workflows/zsh-scripts/wordpress-env.zsh
-  source ~/Repos/kin-alfred-workflows/zsh-scripts/kinetic-aliases.zsh
-  # source ~/Repos/kin-alfred-workflows/zsh-scripts/useful-aliases.zsh
-  # source ~/Repos/kin-alfred-workflows/zsh-scripts/helpers.zsh
-
   # Miscellaneous
   source ${zsh_dir}/aliases/timewarrior.zsh
   source ${zsh_dir}/aliases/alias-tips.zsh
@@ -91,49 +83,21 @@ fi
 #--------------------------------------------------------------------------
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/Users/zacharytaylor/.local/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# New setup?
 # export NVM_DIR="$HOME/.nvm"
-#   [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-#   [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-export PATH=$PATH:~/.composer/vendor/bin
-export PATH=$HOME/.composer/vendor/bin:$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$PATH:~/.composer/vendor/bin
+# export PATH=$HOME/.composer/vendor/bin:$HOME/bin:/usr/local/bin:$PATH
 
-export PATH="/opt/homebrew/opt/php/bin:$PATH"
-export PATH="/opt/homebrew/opt/php/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.3/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.3/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.4/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.4/sbin:$PATH"
-
-# export PATH="/opt/homebrew/opt/mariadb@10.6/bin:$PATH"
-
-export LDFLAGS="-L/opt/homebrew/opt/php@8.2/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/php@8.2/include"
 export PATH=$PATH:$NVM_DIR/versions/node/node_modules/.bin
 
-export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
-
-export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.2.0/bin:$PATH"
-
-# alias nnn='/opt/homebrew/bin/nnn -de' # -d for details and -e to open files in $VISUAL (for other options, see 'man nnn'...)
 #-----
 export NNN_OPTS="H" # 'H' shows the hidden files. Same as option -H (so 'nnn -deH')
 # export NNN_OPTS="deH" # if you prefer to have all the options at the same place
 export LC_COLLATE="C" # hidden files on top
 export NNN_FIFO="/tmp/nnn.fifo" # temporary buffer for the previews
 # export NNN_TERMINAL="terminal"
-export NNN_BMS="d:$HOME/Documents;h:$HOME/;D:$HOME/Downloads/;k:$HOME/Kinetic/;K:$HOME/KineticDocs/;r:$HOME/Repos/;c:$HOME/Repos/dotfiles/;S:$HOME/Sync/;s:$HOME/Pictures/screenshots/;w:$HOME/Sync/Images/WallPapers/"
+# export NNN_BMS="d:$HOME/Documents;h:$HOME/;D:$HOME/Downloads/;k:$HOME/Kinetic/;K:$HOME/KineticDocs/;r:$HOME/Repos/;c:$HOME/Repos/dotfiles/;S:$HOME/Sync/;s:$HOME/Pictures/screenshots/;w:$HOME/Sync/Images/WallPapers/"
 # export NNN_FCOLORS="AAAAE631BBBBCCCCDDDD9999" # feel free to change the colors
 export NNN_PLUG='f:finder;o:fzopen;d:diffs;t:nmount;v:imgview;p:preview-tui' # many other plugins are available here: https://github.com/jarun/nnn/tree/master/plugins
 export SPLIT='v' # to split Kitty vertically
@@ -176,16 +140,8 @@ ZSH_TMUX_UNICODE=true
 #--------------------------------------------------------------------------
 # Miscellaneous
 #--------------------------------------------------------------------------
-up() { . up.sh "$1"; }
+# up() { . up.sh "$1"; }
 # rep() { . rep.sh "$1"; }
-
-function brew() {
-  command brew "$@" 
-
-  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-    sketchybar --trigger brew_update
-  fi
-}
 
 # Add Zoxide (for cd, quick jump) to shell
 if hash zoxide 2> /dev/null; then
@@ -194,6 +150,6 @@ fi
 
 export GPG_TTY=$(tty)
 eval "$(starship init zsh)"
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

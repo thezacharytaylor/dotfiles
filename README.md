@@ -2,6 +2,7 @@
 
 My Fedora Linux configuration files.
 Need to clean this up a bit. 🤔️
+At the time of writing, the latest version is 42.
 
 ## Notables
 
@@ -10,6 +11,7 @@ Need to clean this up a bit. 🤔️
 - **Font**: GeistMono Nerd Font
 - **Keyboard**: Colemak
 - **Editor**: NeoVim, AstroVim flavor (Also VSCodium as a backup)
+- **Towel**: Acquired
 - **Notes**: Obsidian
 - Other brew files can be found by viewing my zsh files like eza and rsync
 - There's a custom color for my MacOs highlight as well. Try googling the cli

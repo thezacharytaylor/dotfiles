@@ -1,21 +1,22 @@
 # Dotfiles
 
-My Fedora Linux configuration files.
-Need to clean this up a bit. 🤔️
-At the time of writing, the latest version is 42.
+My configuration files.
+Currently migrating from MacOS back to Linux (after 13 years!).
+Check the branches for my old MacOS Sequoia setup.
 
 ## Notables
 
-- **Terminal**: Kitty (Though trying Warp)
+- **Operating System**: Fedora Linux 42
+- **Desktop Environment**: GNOME
+- **Window Manager**: GNOME Shell
+- **Terminal**: Ptyxis (for some reason, I'm surprised too)
 - **Terminal Theme**: Starship
+- **Terminal Palette**: Rose Pine Dawn/Moon and or Dawnfox.
 - **Font**: GeistMono Nerd Font
 - **Keyboard**: Colemak
 - **Editor**: NeoVim, AstroVim flavor (Also VSCodium as a backup)
 - **Towel**: Acquired
-- **Notes**: Obsidian
-- Other brew files can be found by viewing my zsh files like eza and rsync
-- There's a custom color for my MacOs highlight as well. Try googling the cli
-  for that.
+- **Notes**: Obsidian for note taking.
 
 ## TODO
 
@@ -25,5 +26,6 @@ At the time of writing, the latest version is 42.
 - [ ] Update system links
 - [ ] Automate/get a manager
 - [ ] Get a theme switcher
-- [x] Contribute to Witch Hazel (Kitty)
-- [ ] Fix lualine for Witch Hazel
+- [x] Contribute to Witch Hazel Theme (Kitty)
+- [ ] Fix lualine for Witch Hazel Theme
+- [ ] Propose a light version of Witch Hazel Theme

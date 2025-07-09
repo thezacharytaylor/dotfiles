@@ -1,0 +1,7 @@
+[gpg]
+    format = ssh
+[user]
+    name = Tiffany Aching
+    email = tiff@wyrdsisters.net
+    username = taching
+    signingkey = /home/tiffanyaching/.ssh/github-signing.pub

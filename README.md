@@ -21,10 +21,10 @@ Check the branches for my old MacOS Sequoia setup.
 
 ## TODO
 
-- [ ] Add new install instructions for Linux
-- [ ] Add/complete system links.
+- [x] Add new install instructions for Linux
+- [x] Add/complete system links.
 - [x] Move all folders to config folder.
-- [ ] Update system links
+- [x] Update system links
 - [ ] Automate/get a manager
 - [ ] Get a theme switcher
 - [x] Contribute to Witch Hazel Theme (Kitty)
@@ -45,11 +45,17 @@ cd ~
 mkdir repos
 cd repos
 git clone git@github.com:thezacharytaylor/dotfiles.git
-ln -sf /path/to/dotfiles/config/.git /home/???/.gitconfig
+cd dotfiles/config/git
+cp .gitconfig_local_example .gitconfig_local # TODO check if this is out of place
+ln -sf /path/to/dotfiles/config/.gitconfig_local /home/???/.gitconfig_local
+ln -sf /path/to/dotfiles/config/.gitconfig /home/???/.gitconfig
 ln -s /path/to/dotfiles/config/nvim /home/???/.config/nvim
 ln -sf /path/to/dotfiles/config/zsh/zshrc /home/???/.zshrc
 ln -s /path/to/dotfiles/config/zsh /home/???/.config/zsh
 source /home/???/.zshrc
+
+# Setup git info
+vi .gitconfig_local
 
 # Further setup NeoVim
 # Get Nerd Fonts and Install

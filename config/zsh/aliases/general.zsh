@@ -16,8 +16,8 @@ alias vsc="codium ."
 alias zcfg="vim ~/.zshrc"
 alias zrld="source ~/.zshrc"
 alias scfg="vim ~/.ssh/config"
-alias hcfg="sudo vim /private/etc/hosts"
-alias dcfg="cd ~/Repos/dotfiles; vim"
+#alias hcfg="sudo vim /private/etc/hosts" #TODO: update this for fedora 6
+alias dcfg="cd ~/repos/dotfiles; vim"
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # Cleaner file management
@@ -26,7 +26,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias ls="eza -lag --header"
-alias eza="/opt/homebrew/bin/eza"
+alias eza="~/.cargo/bin/eza"
 alias rsync="rsync -vzP"
 
 # Misc
@@ -123,8 +123,8 @@ alias c...='cd ../../../'
 alias c....='cd ../../../../'
 alias c.....='cd ../../../../'
 alias cg='cd `git rev-parse --show-toplevel`' # Base of git project
-alias cdr="cd"" ~/Repos"
-alias cdrd="cd"" ~/Repos/dotfiles"
+alias cdr="cd"" ~/repos"
+alias cdrd="cd"" ~/repos/dotfiles"
 
 # Finding files and directories
 alias dud='du -d 1 -h' # List sizes of files within directory
@@ -215,4 +215,5 @@ alias gtfo='exit'
 
 # Bringing it all together
 # alias letsrockbaby='( echo "Running homebrew updates"; bubu; echo "Running composer updates"; cgu; echo "Restarting valet"; valet restart; )' # 
+# alias magic='( tmux new -s magic; run "echo hello"; )'
 alias blessedbe='( two; )' #tksv;

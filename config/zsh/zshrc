@@ -91,6 +91,7 @@ export NVM_DIR="$HOME/.nvm"
 # export PATH=$HOME/.composer/vendor/bin:$HOME/bin:/usr/local/bin:$PATH
 
 export PATH=$PATH:$NVM_DIR/versions/node/node_modules/.bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 #-----
 export NNN_OPTS="H" # 'H' shows the hidden files. Same as option -H (so 'nnn -deH')

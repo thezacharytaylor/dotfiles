@@ -36,7 +36,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(brew composer git tmux wp-cli yarn)
 
-source $ZSH/oh-my-zsh.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # function zvm_config() {
 #   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
@@ -56,7 +56,7 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/aliases/laravel.zsh
 
   # Miscellaneous
-  source ${zsh_dir}/aliases/timewarrior.zsh
+  # source ${zsh_dir}/aliases/timewarrior.zsh
   source ${zsh_dir}/aliases/alias-tips.zsh
 
   # Setup Antigen, and import plugins

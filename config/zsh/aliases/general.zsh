@@ -20,10 +20,6 @@ alias hcfg="sudo vim /private/etc/hosts"
 alias dcfg="cd ~/Repos/dotfiles; vim"
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
-# Kinetic
-alias kinssh="( cd ~/Repos/kin-ssh-config; git pull )"
-alias kinsage="( cd ~/Kinetic/kinsage; git pull )"
-
 # Cleaner file management
 alias rm='rm -i'
 alias cp='cp -i'
@@ -127,7 +123,6 @@ alias c...='cd ../../../'
 alias c....='cd ../../../../'
 alias c.....='cd ../../../../'
 alias cg='cd `git rev-parse --show-toplevel`' # Base of git project
-alias cdk="cd"" ~/Kinetic"
 alias cdr="cd"" ~/Repos"
 alias cdrd="cd"" ~/Repos/dotfiles"
 
@@ -173,7 +168,6 @@ fi
 
 # Eza shortcuts
 if alias_not_used zd; then; alias zd='z dotfiles'; fi
-if alias_not_used zk; then; alias zk='z Kinetic'; fi
 
 
 # Use color diff, if availible
@@ -220,27 +214,5 @@ alias dog='cat'
 alias gtfo='exit'
 
 # Bringing it all together
-# Brew update, composer global update, check Kinetic SSH config, start tmux
-alias yabaiboot='( echo "Loading Yabai Script Component..."; echo "Please enter your password."; sudo yabai --load-sa; echo "Thank you for choosing Yabai and remember: The universe is not nice. So stay near me. I am a bit nicer." )'
-alias letsrockbaby='( echo "Running homebrew updates"; bubu; echo "Running composer updates"; cgu; echo "Restarting valet"; valet restart; echo "Fetching Kinetic ssh keys"; kinssh; )' # ts werk;
-alias magic='( tmux new -s magic; run "echo hello"; )'
+# alias letsrockbaby='( echo "Running homebrew updates"; bubu; echo "Running composer updates"; cgu; echo "Restarting valet"; valet restart; )' # 
 alias blessedbe='( two; )' #tksv;
-
-updatewpadmintheme () {
-  # Specify the base directory to start from
-  base_dir="$1"
-
-  # Define the command to run in each directory
-  command_to_run="wp user update dev@kinetic.com --admin_color=sunrise"  # Replace with the actual command you want to execute
-
-  # Iterate through all directories within the base directory
-  for dir in "$base_dir"/*/; do
-      if [[ -d "$dir" ]]; then  # Check if it's a directory
-          cd "$dir"  # Change to the directory
-          echo "Running command in $dir..."
-          wp user update kineticteam@gmail.com --admin_color=sunrise
-          # $command_to_run  # Execute the specified command
-          cd -  # Return to the previous directory
-      fi
-  done
-}

@@ -55,14 +55,14 @@ return {
         insert = "<CR>",
       },
     },
-    rag_service = {
-      enabled = false, -- Enables the RAG service
-      host_mount = os.getenv "HOME", -- Host mount path for the rag service
-      provider = "mistral_lg", -- The provider to use for RAG service (e.g. openai or ollama)
-      llm_model = "mistral-large-latest", -- The LLM model to use for RAG service
-      embed_model = "codestral-embed-2505", -- The embedding model to use for RAG service
-      endpoint = "https://api.mistral.ai/v1/", -- The API endpoint for RAG service
-    },
+    -- rag_service = {
+    --   enabled = false, -- Enables the RAG service
+    --   host_mount = os.getenv "HOME", -- Host mount path for the rag service
+    --   provider = "mistral_lg", -- The provider to use for RAG service (e.g. openai or ollama)
+    --   llm_model = "mistral-large-latest", -- The LLM model to use for RAG service
+    --   embed_model = "codestral-embed-2505", -- The embedding model to use for RAG service
+    --   endpoint = "https://api.mistral.ai/v1/", -- The API endpoint for RAG service
+    -- },
     provider = "mistral_code", -- "mistral"
     web_search_engine = {
       provider = "searxng",
@@ -75,8 +75,8 @@ return {
     auto_suggestions_provider = "mistral_code",
     providers = {
       mistral_code = {
-        api_key_name = "CODESTRAL_API_KEY",
-        endpoint = "https://codestral.mistral.ai/v1/",
+        api_key_name = "MISTRAL_API_KEY", -- Using mistral key until I can generate a codestral key
+        endpoint = "https://api.mistral.ai/v1/",
         model = "codestral-latest",
         __inherited_from = "openai",
         -- max_completion_tokens = 32768, -- remember to increase this value, otherwise it will stop generating halfway

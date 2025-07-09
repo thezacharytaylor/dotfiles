@@ -49,7 +49,6 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/aliases/general.zsh
   source ${zsh_dir}/aliases/git.zsh
   source ${zsh_dir}/aliases/node.zsh
-  source ${zsh_dir}/aliases/sync.zsh
   source ${zsh_dir}/aliases/wordpress.zsh
 
   # Import Laravel specific aliases/functions

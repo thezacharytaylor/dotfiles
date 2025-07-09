@@ -34,7 +34,6 @@ alias twtag='timew tag'
 # TODO: add support for no tag
 # TODO: add support for no annotation
 twaa() {
-  local tag="kin";
   local ann="Miscellaneous";
 
   echo $1 $3 "$2"

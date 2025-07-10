@@ -11,13 +11,13 @@ Check the branches for my old MacOS Sequoia setup.
 - **Window Manager**: GNOME Shell
 - **Terminal**: Ptyxis (for some reason, I'm surprised too)
 - **Terminal Theme**: Starship
-- **Terminal Palette**: Horizon
+- **Terminal Palette**: Rose Pine Dawn/Moon
 - **Font**: GeistMono Nerd Font
 - **Keyboard**: Colemak
 - **Editor**: NeoVim, AstroVim flavor (Also VSCodium as a backup)
-- **Editor Theme**: Dawnfox/Duskfox
+- **Editor Theme**: Rose Pine Dawn/Moon
 - **Towel**: Acquired
-- **Notes**: Obsidian for note taking.
+- **Notes**: Obsidian
 
 ## TODO
 

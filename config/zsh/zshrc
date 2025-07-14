@@ -13,15 +13,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
-                                                  # || source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# [ -d "/opt/homebrew/share/zsh-syntax-highlighting/highlighters" ] && export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters \
-                                                                  # || export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-
-# [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
-                                                  # || source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Directory for all-things ZSH config
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
 
@@ -34,7 +25,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(brew composer git tmux wp-cli yarn)
+plugins=(dnf composer git wp-cli yarn zsh-autosuggestions zsh-syntax-highlighting)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
